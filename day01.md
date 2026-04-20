@@ -25,5 +25,11 @@
 
 # Công cụ làm việc trong quá trình thực tập
 ## Chat 
-<p>Telegram </p>![](https://github.com/thengday/intern/issues/1#issuecomment-4278975791)
+<p>Telegram </p><img width="634" height="356" alt="image" src="https://github.com/user-attachments/assets/c7c2445a-e363-4b7e-a776-21916d4b6310" />
+
+<p>Zalo</p> <img width="585" height="473" alt="image" src="https://github.com/user-attachments/assets/1f11cd61-f822-4b06-a88a-faecf453ffd3" />
+
+# Quản lý tài liệu Github
+<p><b>Cách sử dụng github</b> </p>
+
 
