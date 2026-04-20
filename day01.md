@@ -19,8 +19,8 @@
 <p> Cho thuê nguyên server vật lý </p>
 <p><b> Hosting</b> vận hành website Hosting Linux, Windows, NVMe Hosting sử dụng ổ cứng NVMe để tối đa hóa tốc độ đọc ghi dữ liệu</p>
 <p> WordPress Hosting tối ưu cho các website chạy mã nguồn WordPress</p>
-<p><b>Email</b>Cung cấp hệ thống email tên miền riêng dành cho doanh nghiệp, cung cấp hệ sinh thái ứng dụng của Google cho doanh nghiệp</p>
-<p><b>Chứng chỉ bảo mật SSL và backup</b> Cung cấp chứng chỉ SSL/TLS mã hóa dữ liệu trên đường truyền và dịch vụ sao lưu tự động định kỳ cho website và server</p>
+<p><b>Email </b>Cung cấp hệ thống email tên miền riêng dành cho doanh nghiệp, cung cấp hệ sinh thái ứng dụng của Google cho doanh nghiệp</p>
+<p><b>Chứng chỉ bảo mật SSL và backup </b> Cung cấp chứng chỉ SSL/TLS mã hóa dữ liệu trên đường truyền và dịch vụ sao lưu tự động định kỳ cho website và server</p>
 <p>Cung cấp dịch vụ thiết kế website trọn gói với mẫu có sẵn, Hoadon.biz phát hành và quản lý hóa đơn điện tử theo quy định nhà nước, hợp đồng điện tử kỹ kết văn bản trực tuyến, VFONE tổng đài điện thoại </p>
 
 # Công cụ làm việc trong quá trình thực tập
@@ -31,5 +31,42 @@
 
 # Quản lý tài liệu Github
 <p><b>Cách sử dụng github</b> </p>
+<p>Tạo Repo</p> <img width="273" height="302" alt="image" src="https://github.com/user-attachments/assets/f89edf30-7527-43d5-83d5-25337da19dd2" />
+<p>Tạo git: git init</p>
+<p>Thêm các file: git add...</p>
+<p>commit file: git commint -m. -m là comment</p>
+<p>Liên kết thư mục với repo: git remote add origin...</p>
+<p>Đẩy code lên git: git push -u</p>
+<p>Clone Project: git clone link.git</p>
+<p><b>Cách sử dụng markdown trong Github</b></p>
+
+<p>Phần mềm SSH kiểm tra cấu hình mặc định </p> <img width="575" height="94" alt="image" src="https://github.com/user-attachments/assets/a4380f33-b905-409e-8448-cbdeb2163213" />
+<p>netstat -ln |grep 22 để kiểm tra công ssh đã mở chưa</p><img width="633" height="102" alt="image" src="https://github.com/user-attachments/assets/f878a71a-c766-4af8-821b-cfd0999e9895" />
+<p> Máy Window kiểm tra kết nối mạng tới Ubuntu</p><img width="356" height="240" alt="image" src="https://github.com/user-attachments/assets/ca872b60-34a9-49e0-8e27-3a6569caa81e" />
+<p> Sử dụng PuTTY truy cập</p> <img width="467" height="462" alt="image" src="https://github.com/user-attachments/assets/a641e682-9f61-45c5-898c-cc10a21524e6" /> <img width="633" height="408" alt="image" src="https://github.com/user-attachments/assets/4ebcc016-0010-4c78-bc72-c9e723f236fa" />
+<img width="427" height="549" alt="image" src="https://github.com/user-attachments/assets/50fa81ec-44d1-4e97-863b-e39826461400" />
+<p>SecureCRT, Mobaxterm cũng là phần mềm truy cập dựa trên giao thức như telnet, ssh nhập các cổng và ip như PuTTY</p>
+<p><b>Phần mềm RemoteDesktop </b> Kiểm tra ip ping thông </p><img width="989" height="246" alt="image" src="https://github.com/user-attachments/assets/f30ca4a9-9de6-4924-837c-98f97c43a31e" />
+<p>Mở cổng truy cập cho phép Remote</p><img width="603" height="579" alt="image" src="https://github.com/user-attachments/assets/997cb3ae-bcfc-414d-9b9a-418224aeb2c7" />
+<img width="398" height="408" alt="image" src="https://github.com/user-attachments/assets/943de445-347a-493e-bf9f-9fa6c41f0225" />
+<img width="1488" height="867" alt="image" src="https://github.com/user-attachments/assets/6c00b91f-00ea-43bb-bc7d-4dc886904039" />
+<p>Tạo máy ảo thực hành VMware </p>
+<img width="437" height="429" alt="image" src="https://github.com/user-attachments/assets/31af4f8f-7558-44be-9ae3-5fc3a9d9fb2e" />
+<img width="441" height="437" alt="image" src="https://github.com/user-attachments/assets/abfce32c-03da-41d8-a0c4-30e67e7059ff" />
+<img width="1716" height="871" alt="image" src="https://github.com/user-attachments/assets/404434e4-ed03-4051-a151-2ce7af12e3d1" />
+<p>Capture màn hình </p>
+<img width="377" height="139" alt="image" src="https://github.com/user-attachments/assets/1682d9cb-96e6-4a35-a3cb-35cd48efe22f" />
+<img width="1920" height="1076" alt="image" src="https://github.com/user-attachments/assets/4ccd1d55-ba40-4044-97f5-bfa14c9462d6" />
+
+<p>Vẽ mô hình draw.io</p>
+<img width="682" height="388" alt="image" src="https://github.com/user-attachments/assets/f26c2804-6de3-486c-8d30-c40ab99b1fdf" />
+
+
+
+
+
+
+
+
 
 
