@@ -59,7 +59,8 @@
 <img width="1920" height="1076" alt="image" src="https://github.com/user-attachments/assets/4ccd1d55-ba40-4044-97f5-bfa14c9462d6" />
 
 <p>Vẽ mô hình draw.io</p>
-<img width="682" height="388" alt="image" src="https://github.com/user-attachments/assets/f26c2804-6de3-486c-8d30-c40ab99b1fdf" />
+<img width="966" height="469" alt="image" src="https://github.com/user-attachments/assets/59136612-9efa-4087-b0ec-912efee3427e" />
+
 <img width="1214" height="553" alt="image" src="https://github.com/user-attachments/assets/8fba1cc1-e8e6-4759-9eff-5a47bfdf1b00" />
 
 
