@@ -21,7 +21,7 @@
 <p>Retry: Nếu không thể kết nối với Primary, sau thời gian này máy chủ Secondary sẽ thử lại.</p>
 <p>Expire: Nếu sau một thời gian dài không thể đồng bộ được, dữ liệu trên máy chủ Secondary sẽ bị xem là không hợp lệ.</p>
 <p>TTL (Time to Live): Thời gian mà các máy chủ khác được phép lưu cache thông tin này trước khi phải truy vấn lại.</p>
-<p><b>NS Record (Name Server)</b>NS Record (Name Server) là bản ghi DNS dùng để xác định máy chủ tên miền nào đang chịu trách nhiệm quản lý và phân giải thông tin của một domain cụ thể. Mỗi zone DNS sẽ có ít nhất một NS Record, chỉ rõ địa chỉ của các máy chủ DNS được ủy quyền. Nhờ đó, quá trình truy vấn tên miền được định tuyến chính xác đến hệ thống DNS phù hợp, đảm bảo website hoạt động ổn định.</p>
+<p><b>NS Record (Name Server)</b>là bản ghi DNS dùng để xác định máy chủ tên miền nào đang chịu trách nhiệm quản lý và phân giải thông tin của một domain cụ thể. Mỗi zone DNS sẽ có ít nhất một NS Record, chỉ rõ địa chỉ của các máy chủ DNS được ủy quyền. Nhờ đó, quá trình truy vấn tên miền được định tuyến chính xác đến hệ thống DNS phù hợp, đảm bảo website hoạt động ổn định.</p>
 <p><b>Record A (Address Record) </b>là một trong những bản ghi quan trọng trong hệ thống DNS, dùng để ánh xạ tên miền thành địa chỉ IP dạng IPv4. Nhờ bản ghi này, người dùng có thể truy cập website bằng cách nhập tên miền thay vì phải ghi nhớ dãy số IP phức tạp</p>
 <p><b>Record AAAA </b>là bản ghi DNS dùng để ánh xạ tên miền đến địa chỉ IP phiên bản IPv6, tương tự như Record A nhưng dành cho môi trường mạng hiện đại hơn. Với khả năng cung cấp hàng tỷ tỷ địa chỉ, IPv6 được phát triển nhằm thay thế IPv4</p>
 <p><b>PTR Record (Pointer Record) </b>Trong hệ thống DNS thông thường, bản ghi A/AAAA thực hiện ánh xạ từ tên miền (hostname) → địa chỉ IP. Ngược lại, bản ghi PTR (Pointer Record) được sử dụng để thiết lập ánh xạ địa chỉ IP → tên miền, hay còn gọi là Reverse DNS Lookup.</p>
@@ -31,7 +31,7 @@
 <p>Giao thức: Chỉ rõ giao thức truyền dữ liệu như TCP hoặc UDP</p>
 <p>Tên miền: Gắn liền với dịch vụ cần định vị.</p>
 <p>TTL: Thời gian lưu bản ghi trong bộ nhớ cache.</p>
-<p> Class: Luôn là IN (Internet)</p>
+<p>Class: Luôn là IN (Internet)</p>
 <p>Ưu tiên: Quyết định mức độ ưu tiên giữa các máy chủ, số nhỏ hơn được ưu tiên hơn</p>
 <p>Trọng lượng: Dùng để cân bằng tải giữa các máy chủ có cùng mức ưu tiên.</p>
 <p>Port: Số cổng mà dịch vụ hoạt động</p>
