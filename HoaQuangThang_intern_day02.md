@@ -90,7 +90,7 @@
 
 <p>php trên IIS</p>
 <img width="804" height="562" alt="image" src="https://github.com/user-attachments/assets/c7fd2887-a86e-4d6e-b621-4cb4699143ec" />
-<img width="1232" height="379" alt="image" src="https://github.com/user-attachments/assets/c2ee9d28-12ad-4468-9ce6-3c5e477f3bbd" />
+
 
 
 
