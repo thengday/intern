@@ -63,6 +63,12 @@
 <img width="762" height="553" alt="image" src="https://github.com/user-attachments/assets/a1175b22-c5ac-408f-b427-817fe911ae3c" />
 <p>Cấu hình nginx</p>
 <img width="776" height="554" alt="image" src="https://github.com/user-attachments/assets/b21283a5-8d8c-4438-8853-16f548b6c0c6" />
+<img width="1643" height="893" alt="image" src="https://github.com/user-attachments/assets/dcb78ed7-2018-497b-8d92-cfefb355833e" />
+<img width="1655" height="916" alt="image" src="https://github.com/user-attachments/assets/4b9d6c9b-114f-4dc3-a4ab-016daeb218e0" />
+<p><b>viết bash script LAMP, LEMP</b></p>
+<img width="1920" height="966" alt="image" src="https://github.com/user-attachments/assets/8bb39a6f-c6ff-4bdf-8f24-e0d5fc9f4fc3" />
+<img width="1920" height="979" alt="image" src="https://github.com/user-attachments/assets/96db28d2-e732-4aef-9e14-bcd048c32062" />
+<img width="1920" height="987" alt="image" src="https://github.com/user-attachments/assets/f21d2c48-b33d-40fc-9557-ec309e168be7" />
 
 
 
