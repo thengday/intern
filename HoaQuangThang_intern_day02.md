@@ -50,7 +50,19 @@
 <img width="826" height="863" alt="image" src="https://github.com/user-attachments/assets/b12a6367-e803-4058-ab63-953269ea0b9e" />
 <img width="1719" height="934" alt="image" src="https://github.com/user-attachments/assets/b520146a-4e14-41cd-9d30-b4ad97d02028" />
 <p><b>Triển khai site wordpress LEMP stack</b></p>
-
+<p>Cài đặt Nginx</p><img width="846" height="180" alt="image" src="https://github.com/user-attachments/assets/28f7eb98-74ac-45f2-9e0d-62a744689064" />
+<img width="896" height="366" alt="image" src="https://github.com/user-attachments/assets/eac22303-356f-4489-a71e-23d178abbe24" />
+<img width="774" height="417" alt="image" src="https://github.com/user-attachments/assets/3d2eed85-b219-4369-8cb6-178724d10d3c" />
+<img width="772" height="193" alt="image" src="https://github.com/user-attachments/assets/0c479546-e1fa-4ee8-8063-47ac934f203b" />
+<img width="1704" height="918" alt="image" src="https://github.com/user-attachments/assets/49842c8d-e1d5-4536-b6a9-b0c931a849dc" />
+<p>Triển khai site wordpress tách web server, DB server (1 node web server, 1 node DB server)</p>
+<p>Chinh bind-addresss = 0.0.0.0 trên máy db để lắng nghe mọi ip</p> <img width="1518" height="746" alt="image" src="https://github.com/user-attachments/assets/5aa0927a-0ef1-4f92-939f-4654bf8a1482" />
+<img width="1190" height="364" alt="image" src="https://github.com/user-attachments/assets/f1922e05-6aab-4440-91eb-fd5926edc41a" />
+<p>Trên máy server:</p>
+<img width="766" height="107" alt="image" src="https://github.com/user-attachments/assets/d64a8533-3880-404f-9466-a402e97d538b" />
+<img width="762" height="553" alt="image" src="https://github.com/user-attachments/assets/a1175b22-c5ac-408f-b427-817fe911ae3c" />
+<p>Cấu hình nginx</p>
+<img width="776" height="554" alt="image" src="https://github.com/user-attachments/assets/b21283a5-8d8c-4438-8853-16f548b6c0c6" />
 
 
 
