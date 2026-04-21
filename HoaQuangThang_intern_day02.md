@@ -38,3 +38,19 @@
 <p>Target: Tên miền đầy đủ (FQDN) của máy chủ cung cấp dịch vụ</p>
 
 # Web Server
+## Linux 
+<p><b>Triển khai site wordpress trên LAMP stack</b></p>
+<p>Cài đặt apache2 </p><img width="875" height="468" alt="image" src="https://github.com/user-attachments/assets/790de66b-9998-4322-b65c-4ffa35209128" />
+<p>Cài đặt mysql</p><img width="786" height="186" alt="image" src="https://github.com/user-attachments/assets/e101a757-1664-4e93-8a07-051627ca87e3" />
+<img width="756" height="518" alt="image" src="https://github.com/user-attachments/assets/94bdd7b8-2359-4860-9b11-efaa992aed63" />
+<p>Tải mã nguồn WordPress</p><img width="782" height="120" alt="image" src="https://github.com/user-attachments/assets/d3c0e30c-4e75-4e67-ac18-ea2f8c48ea41" />
+<img width="812" height="190" alt="image" src="https://github.com/user-attachments/assets/e4e7fff8-57a2-467d-9ac9-79276b390d66" />
+<img width="783" height="339" alt="image" src="https://github.com/user-attachments/assets/1083ec2d-2ffa-4e05-8e4c-8b8c3f58db25" />
+<p>Truy cập vào IP 10.130.10.132</p><img width="833" height="872" alt="image" src="https://github.com/user-attachments/assets/2ac7eaa9-a0ce-419e-bfa5-030aee269bd8" />
+<img width="826" height="863" alt="image" src="https://github.com/user-attachments/assets/b12a6367-e803-4058-ab63-953269ea0b9e" />
+<img width="1719" height="934" alt="image" src="https://github.com/user-attachments/assets/b520146a-4e14-41cd-9d30-b4ad97d02028" />
+<p><b>Triển khai site wordpress LEMP stack</b></p>
+
+
+
+
