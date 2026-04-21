@@ -70,5 +70,27 @@
 <img width="1920" height="979" alt="image" src="https://github.com/user-attachments/assets/96db28d2-e732-4aef-9e14-bcd048c32062" />
 <img width="1920" height="987" alt="image" src="https://github.com/user-attachments/assets/f21d2c48-b33d-40fc-9557-ec309e168be7" />
 
+## Windows
+<p>Triển khai site demo1 html basic trên web server IIS</p>
+<p>Cài đặt IIS</p>
+<img width="824" height="575" alt="image" src="https://github.com/user-attachments/assets/1863690d-87ad-44c1-b028-634c9456899d" />
+<img width="812" height="573" alt="image" src="https://github.com/user-attachments/assets/3577c450-9024-4655-8eb3-bfd373d8189c" />
+<p>Chọn add website</p>
+<img width="756" height="258" alt="image" src="https://github.com/user-attachments/assets/a7c21bf8-b611-47af-8b83-2343109235e6" />
+<img width="1515" height="615" alt="image" src="https://github.com/user-attachments/assets/355a1289-c50a-4a4f-8202-13e226f32263" />
+<img width="759" height="610" alt="image" src="https://github.com/user-attachments/assets/aa804b6c-0621-4c21-aab4-19024ecc96b5" />
+<p>Triển khai site demo2 ASP classic trên IIS</p>
+<p>Kích hoạt ASP</p>
+<img width="732" height="566" alt="image" src="https://github.com/user-attachments/assets/3baf778b-1751-4cbe-b25b-6b004f76b667" />
+<img width="1128" height="750" alt="image" src="https://github.com/user-attachments/assets/ce348691-947b-4781-846d-bc7e7ddad99d" />
+<img width="638" height="596" alt="image" src="https://github.com/user-attachments/assets/8e9742fb-e533-4b15-8981-cf8a1162abf0" />
+<img width="772" height="609" alt="image" src="https://github.com/user-attachments/assets/036cf39b-a802-4493-be44-bafc9a9408c0" />
+<p>Triển khai site demo 3 .net (3.5, 4.x) trên IIS</p>
+<img width="760" height="605" alt="image" src="https://github.com/user-attachments/assets/fe12aae9-0e69-43ef-89b5-fa75e2102db7" />
+
+<p>php trên IIS</p>
+<img width="804" height="562" alt="image" src="https://github.com/user-attachments/assets/c7fd2887-a86e-4d6e-b621-4cb4699143ec" />
+<img width="1232" height="379" alt="image" src="https://github.com/user-attachments/assets/c2ee9d28-12ad-4468-9ce6-3c5e477f3bbd" />
+
 
 
