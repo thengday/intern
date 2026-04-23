@@ -62,7 +62,12 @@
 <img width="1638" height="650" alt="image" src="https://github.com/user-attachments/assets/190ec3cb-e9c4-4a94-8a99-4921f1de928f" />
 
 ## Backup/Restore
-<p>Dùng chức năng snapshot của máy ảo</p>
-<img width="1917" height="1023" alt="image" src="https://github.com/user-attachments/assets/23867daf-f4b5-4872-a7f3-e5c845b5979f" />
+<p>Tạo script Backup</p>
+<img width="834" height="704" alt="image" src="https://github.com/user-attachments/assets/028953c4-0b90-4b44-be57-b7fe648997d2" />
+<img width="793" height="162" alt="image" src="https://github.com/user-attachments/assets/0c566211-4d16-4139-abaa-1fc52d6c2856" />
+<p>Restore tạo script </p>
+<img width="836" height="319" alt="image" src="https://github.com/user-attachments/assets/d5f714f3-62b7-4903-be47-09b6af166452" />
+<img width="845" height="221" alt="image" src="https://github.com/user-attachments/assets/f026d968-4386-44dc-9deb-768426bd6fa5" />
+
 
 
