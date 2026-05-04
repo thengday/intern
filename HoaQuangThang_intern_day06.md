@@ -113,5 +113,15 @@ avg(): Tính giá trị trung bình.</p>
 ## Đưa biểu đồ lên kết hợp grafana (biểu đồ hiển thị RAM, CPU, Uptime, CPU Load, Mysql)
 <p>Tạo dashboard </p>
 <img width="1638" height="911" alt="image" src="https://github.com/user-attachments/assets/53c00143-bbc8-4f22-a069-e2322d80abd6" />
-
-
+<p>Biểu đồ Uptime Server</p>
+<img width="1622" height="887" alt="image" src="https://github.com/user-attachments/assets/d86385b8-f4bb-4b68-a9a5-f3934bea71f2" />
+<p>Biểu đồ % CPU Usage</p>
+<img width="1649" height="880" alt="image" src="https://github.com/user-attachments/assets/34742e66-f064-4f85-b138-36d3b66a2ac0" />
+<p>CPU Load
+</p>
+<img width="1630" height="931" alt="image" src="https://github.com/user-attachments/assets/ec9a95d3-eb8b-4a38-9488-77128e8018d9" />
+<p>% RAM Usage</p>
+<img width="1618" height="914" alt="image" src="https://github.com/user-attachments/assets/5b6bfbf8-ba98-48b9-a958-49db0d213a0f" />
+<p>MySQL Uptime</p>
+<img width="1918" height="923" alt="image" src="https://github.com/user-attachments/assets/32d6b995-1d87-47eb-900d-62a52a962fff" />
+<img width="1911" height="915" alt="image" src="https://github.com/user-attachments/assets/6b31db3b-ceda-4414-ba74-4db20410a094" />
