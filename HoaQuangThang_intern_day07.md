@@ -24,3 +24,82 @@
 <p><b>Cân bằng tải tầng 7 (Layer 7 – Application): </b>Cân bằng tải ở tầng ứng dụng cho phép HAProxy xem xét nội dung HTTP/HTTPS (hoặc các giao thức ứng dụng khác như gRPC, FastCGI). HAProxy có thể xử lý các rule phức tạp như chuyển hướng, phân nhánh lưu lượng dựa vào URL, host, cookie, path, header,… để điều phối request đến backend phù hợp. Nhờ hiểu được logic ứng dụng, loại cân bằng tải tầng 7 được áp dụng nhiều cho các web application, RESTful API và microservices, nơi yêu cầu routing động và kiểm soát linh hoạt nội dung truy cập.</p>
 
 ## Các thuật toán load balancing
+<p>Round Robin: Đây là thuật toán mặc định và phổ biến nhất, phân phối các kết nối tuần tự lần lượt cho từng backend server. Nhờ đó, các request được xử lý đồng đều và đơn giản, phù hợp với hệ thống có các server đồng nhất về cấu hình và hiệu năng</p>
+<p>Weighted Round Robin: Biến thể của Round Robin, cho phép thiết lập trọng số cho từng backend. Server có trọng số cao sẽ nhận nhiều kết nối hơn, thích hợp khi các server có hiệu suất không đồng đều hoặc cần gán ưu tiên cho máy chủ mạnh hơn</p>
+<p>Least Connection: Thuật toán sẽ phân phối kết nối mới tới server đang có ít kết nối nhất tại thời điểm hiện tại. Cách này giúp cân bằng tải tốt hơn với các dịch vụ có thời gian xử lý mỗi kết nối khác nhau, hạn chế tình trạng nghẽn tại một server nhất định</p>
+<p>Source (IP Hash): Căn cứ theo địa chỉ IP nguồn của client, thuật toán này định tuyến tất cả các request từ cùng một địa chỉ IP về cùng một backend server. Giải pháp này giúp duy trì session liên tục cho người dùng, thích hợp khi cần triển khai sticky session</p>
+<p>URL Hash: Trình cân bằng tải sử dụng hash của URL yêu cầu để xác định máy chủ. Điều này đảm bảo rằng một URL cụ thể sẽ luôn được phục vụ bởi cùng một máy chủ, điều này hữu ích trong các trường hợp như việc chia sẻ nội dung từ một máy chủ đến máy chủ khác.</p>
+
+## Tìm hiểu file cấu hình HAProxy
+<p>file cấu hình của HAProxy nằm ở /etc/haproxy/haproxy.cfg.</p>
+<p><b>global</b>: Phần này định nghĩa các tham số ở mức hệ điều hành và áp dụng cho toàn bộ tiến trình HAProxy. Các cấu hình trong đây thường liên quan đến bảo mật, hiệu năng và logging.</p>
+<p>log: Định nghĩa nơi gửi log (thường là rsyslog).</p>
+<p>maxconn: Số lượng kết nối tối đa mà HAProxy có thể xử lý cùng lúc.</p>
+<p>user / group: Chạy tiến trình HAProxy dưới quyền user/group nào (thường là haproxy).</p>
+<p>daemon: Chạy HAProxy dưới dạng background process (tiến trình chạy ngầm).</p>
+
+<p><b>defaults (Cấu hình mặc định) </b>: Phần này chứa các tham số mặc định sẽ được áp dụng cho các phần frontend, backend và listen nằm phía dưới nó, giúp bạn không phải lặp lại cấu hình. Bạn có thể ghi đè (override) các tham số này ở từng phần cụ thể.</p>
+<p>mode: Chế độ hoạt động (thường là http cho web hoặc tcp cho database/các giao thức khác).</p>
+<p>timeout connect: Thời gian tối đa để kết nối đến backend server.</p>
+<p>timeout client: Thời gian chờ client phản hồi trước khi ngắt kết nối.</p>
+<p>timeout server: Thời gian chờ server phản hồi trước khi ngắt kết nối.</p>
+
+<p><b>frontend (Đầu vào nhận traffic): </b>Đây là phần định nghĩa cách HAProxy nhận các yêu cầu từ client. Nó quyết định cổng (port) nào đang lắng nghe và các quy tắc (ACL - Access Control List) để điều hướng traffic đi đâu.</p>
+<p>bind: Chỉ định IP và Port mà HAProxy sẽ lắng nghe (ví dụ: bind *:80).</p>
+<p>acl: Định nghĩa các quy tắc để lọc traffic (ví dụ: nhận diện tên miền, đường dẫn).</p>
+<p>use_backend: Quyết định đẩy traffic đến backend nào dựa trên các quy tắc ACL đã định nghĩa.</p>
+<p>default_backend: Backend mặc định nếu không có ACL nào khớp.</p>
+
+<p><b>backend (Máy chủ xử lý): </b>Phần này định nghĩa nhóm các máy chủ (servers) thực tế sẽ nhận và xử lý yêu cầu từ HAProxy đẩy xuống, cùng với thuật toán cân bằng tải.</p>
+<p>balance: Thuật toán cân bằng tải (ví dụ: roundrobin - xoay vòng, leastconn - ưu tiên server có ít kết nối nhất, source - dựa trên IP client).</p>
+<p>server: Định nghĩa từng máy chủ đích với Tên, IP, Port và các tham số khác như check (bật health check)</p>
+
+<p><b>listen (Kết hợp frontend và backend): </b>là một phiên bản gộp chung cả frontend và backend vào một khối duy nhất. Nó thường được dùng cho các cấu hình đơn giản (như TCP proxy) hoặc để cấu hình trang Thống kê (HAProxy Stats page).</p>
+
+## Cài đặt, triển khai Haproxy + Keepalive cho Apache trên Ubuntu 22.04
+
+<p>Mô hình gồm 4 máy. 2 máy phụ trách backend server và 2 máy chạy load balancer để triển khai keepalive</p>
+<p>Máy web1: 10.130.10.137</p>
+<p>Máy web2: 10.130.10.138</p>
+<p>Cài apache cho 2 máy Web</p>
+<p>Cài apache cho máy Web 1</p>
+<img width="861" height="650" alt="image" src="https://github.com/user-attachments/assets/ab5a8a4b-f539-4bc6-889c-32eeba8b8324" />
+<img width="862" height="107" alt="image" src="https://github.com/user-attachments/assets/0442244a-e73e-44a9-bfda-7be8a4683765" />
+<img width="840" height="148" alt="image" src="https://github.com/user-attachments/assets/cc09cd14-3b8c-493d-aaa0-f50958c58f6f" />
+
+<p>Cài apache cho máy Web 2</p>
+<img width="854" height="225" alt="image" src="https://github.com/user-attachments/assets/d9e301d9-92a7-46ba-80e6-ab16a1247fdc" />
+<img width="864" height="124" alt="image" src="https://github.com/user-attachments/assets/b923f6f7-e453-4f83-8805-9835e2481780" />
+<img width="858" height="121" alt="image" src="https://github.com/user-attachments/assets/d47a2821-f549-4744-ba88-3a0264b73b12" />
+
+<p>Load Balancer 1: 10.130.10.132</p>
+<p>Load Balancer 2: 10.130.10.139</p>
+
+<p>Cài HAProxy trên LB1</p>
+<img width="968" height="150" alt="image" src="https://github.com/user-attachments/assets/b20ad2b0-a90d-4f3a-8345-e469458589a9" />
+<p>Cấu hình Kernel cho phép IP ảo</p>
+<img width="926" height="88" alt="image" src="https://github.com/user-attachments/assets/2850f184-c47a-4812-83af-04abe9c4c3b0" />
+<p>Tạo file cấu hình HAProxy</p>
+<img width="973" height="526" alt="image" src="https://github.com/user-attachments/assets/fa2b7525-ec31-4ea0-ad0e-75867d41cd25" />
+<p>Tạo file cấu hình Keepalived</p>
+<img width="1062" height="785" alt="image" src="https://github.com/user-attachments/assets/df6bdf69-9a5b-48d7-98cf-216c9771c82c" />
+<img width="1073" height="689" alt="image" src="https://github.com/user-attachments/assets/df700c14-ae2c-42cf-8839-0d933369d3d7" />
+
+<p>Cài HAProxy trên LB2</p>
+<img width="989" height="186" alt="image" src="https://github.com/user-attachments/assets/ae4c77ae-f3d5-478d-a772-5fae06412082" />
+<p>Cấu hình Kernel cho phép IP ảo</p>
+<img width="712" height="89" alt="image" src="https://github.com/user-attachments/assets/428026bf-d80c-4903-9a9c-d46eaf925e27" />
+<p>Tạo file cấu hình HAProxy</p>
+<img width="1005" height="390" alt="image" src="https://github.com/user-attachments/assets/0855005e-361c-4342-9c5a-0200ad7b13b4" />
+<p>Tạo file cấu hình Keepalived</p>
+<img width="862" height="337" alt="image" src="https://github.com/user-attachments/assets/c229f78b-3331-4052-919d-2bd5c307437d" />
+<img width="877" height="149" alt="image" src="https://github.com/user-attachments/assets/ce4b6560-607d-412e-8187-b08d4cb95caa" />
+<p>Set địa chỉ VIP IP là 10.130.10.140</p>
+<img width="963" height="162" alt="image" src="https://github.com/user-attachments/assets/3a4babf0-619b-4e7a-a664-077bf769653b" />
+<img width="917" height="217" alt="image" src="https://github.com/user-attachments/assets/b9c32c13-d70c-40ea-8dfa-9358371e2e7b" />
+<p>Tiến hành tắt máy LB1 </p>
+<img width="175" height="112" alt="image" src="https://github.com/user-attachments/assets/5711cffa-a8ed-45b2-900a-417de7b317ce" />
+<p>Kiểm tra xem VIP IP còn chạy không</p>
+<img width="802" height="182" alt="image" src="https://github.com/user-attachments/assets/4317dbcb-08ad-48d6-a85a-34a49ef205ad" />
+<img width="802" height="170" alt="image" src="https://github.com/user-attachments/assets/a13d7c07-9968-453d-b180-39e558bed949" />
+
