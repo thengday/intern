@@ -8,6 +8,10 @@
 
 ## NAT Local Internet, DHCP
 <img width="1400" height="721" alt="image" src="https://github.com/user-attachments/assets/98a427dc-f019-4e50-ac4c-02f760185d6a" />
+<img width="1694" height="794" alt="image" src="https://github.com/user-attachments/assets/4160c9d4-24a9-4dd0-bac9-8b702df10d68" />
+<img width="1339" height="815" alt="image" src="https://github.com/user-attachments/assets/5acdf1fc-0d27-4a81-ac6a-bbfeb2db099c" />
+<img width="972" height="514" alt="image" src="https://github.com/user-attachments/assets/0786ff7b-1c29-493d-8af8-e91f7b188420" />
+
 <img width="1516" height="589" alt="image" src="https://github.com/user-attachments/assets/9a511242-bf4b-423d-87ee-d4e8323a03e7" />
 <img width="1676" height="613" alt="image" src="https://github.com/user-attachments/assets/88af3023-f27c-4ad7-94f2-c8801524eac8" />
 <img width="766" height="258" alt="image" src="https://github.com/user-attachments/assets/ea5e6cea-cea9-4b25-867a-9f6f9ae8e5fc" />
