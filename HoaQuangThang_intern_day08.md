@@ -1,4 +1,4 @@
-<img width="1469" height="695" alt="image" src="https://github.com/user-attachments/assets/bd19aae0-ce44-4350-b0f7-d9d246aea31a" /># Firewall
+# Firewall
 ## Triển khai pfsense
 <img width="744" height="320" alt="image" src="https://github.com/user-attachments/assets/cc94a0bf-b640-4c85-b189-347f96c423b6" />
 
@@ -41,6 +41,7 @@
 <img width="1350" height="324" alt="image" src="https://github.com/user-attachments/assets/841cf189-f0f2-421e-9a38-e0fc58e46e01" />
 <img width="1496" height="521" alt="image" src="https://github.com/user-attachments/assets/d29775f6-d433-4774-bf58-d7c52dce06ab" />
 <img width="1469" height="695" alt="image" src="https://github.com/user-attachments/assets/9c2f1557-e820-49fb-9aab-32069edfb6b6" />
+<img width="1469" height="695" alt="image" src="https://github.com/user-attachments/assets/bd19aae0-ce44-4350-b0f7-d9d246aea31a" />
 <img width="1356" height="585" alt="image" src="https://github.com/user-attachments/assets/8fe2057c-0c85-47ca-8ed1-34d14d8ae180" />
 <img width="1367" height="435" alt="image" src="https://github.com/user-attachments/assets/c2833d78-975b-4825-9b08-787737e3d8c8" />
 
