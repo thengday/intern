@@ -14,7 +14,6 @@
 
 <img width="1516" height="589" alt="image" src="https://github.com/user-attachments/assets/9a511242-bf4b-423d-87ee-d4e8323a03e7" />
 <img width="1676" height="613" alt="image" src="https://github.com/user-attachments/assets/88af3023-f27c-4ad7-94f2-c8801524eac8" />
-<img width="766" height="258" alt="image" src="https://github.com/user-attachments/assets/ea5e6cea-cea9-4b25-867a-9f6f9ae8e5fc" />
 
 ## Firewall Rule
 <p> Cho phép máy trạm trong mạng LAN Ping ra Internet</p>
