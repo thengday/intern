@@ -58,7 +58,7 @@
 <img width="762" height="313" alt="image" src="https://github.com/user-attachments/assets/7c4810fd-a120-4e64-9d96-c3c8715964c6" />
 
 
-##Xóa logical volume, xóa volume group, xóa physical volume.
+## Xóa logical volume, xóa volume group, xóa physical volume.
 <p>Xóa logical volume umount /home/thang/mydata, xóa trong phần /etc/fstab</p>
 <img width="755" height="550" alt="image" src="https://github.com/user-attachments/assets/91e1297b-0530-4e61-b108-50e04e92650f" />
 <p>Xóa volume group</p>
