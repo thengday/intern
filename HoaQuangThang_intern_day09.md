@@ -73,3 +73,31 @@
 <img width="1920" height="955" alt="image" src="https://github.com/user-attachments/assets/dd04b5c8-2b91-438b-b83f-a1610e3cc1e2" />
 
 ## Tìm hiểu về Plesk
+### Cài đặt
+<img width="1224" height="65" alt="image" src="https://github.com/user-attachments/assets/7ff4af6a-2f01-4f39-9fc6-627d93c7605e" />
+<img width="1027" height="520" alt="image" src="https://github.com/user-attachments/assets/c6673cdf-506e-4cea-98a1-548cb915ca7c" />
+<img width="1677" height="952" alt="image" src="https://github.com/user-attachments/assets/be97413a-a352-4fbe-8ced-bd5d632890b8" />
+<img width="864" height="902" alt="image" src="https://github.com/user-attachments/assets/f08a37f3-9bb0-4335-a18a-a1b1a195d29f" />
+
+<img width="709" height="798" alt="image" src="https://github.com/user-attachments/assets/a89567bc-a0b7-4034-b9a7-ecc9c65562ba" />
+<img width="1659" height="925" alt="image" src="https://github.com/user-attachments/assets/bc045a47-fcb6-409f-9bb1-6b0d0d9eea91" />
+<img width="1915" height="722" alt="image" src="https://github.com/user-attachments/assets/42812cdf-83c2-4e6d-ad05-73cab8727f5f" />
+
+<img width="1664" height="684" alt="image" src="https://github.com/user-attachments/assets/e3c1b3be-7dbd-4d59-95f5-754f3f673b29" />
+<img width="1732" height="803" alt="image" src="https://github.com/user-attachments/assets/50d29dde-2dc5-4972-b548-f04bd68ced5b" />
+<img width="1491" height="884" alt="image" src="https://github.com/user-attachments/assets/9f61b3a4-7d77-40c2-ba38-d6d1a303b0f1" />
+<img width="907" height="922" alt="image" src="https://github.com/user-attachments/assets/f88b0b9c-ea03-446f-aa56-4496e6c80db1" />
+<img width="1507" height="589" alt="image" src="https://github.com/user-attachments/assets/80f6623b-54ea-412e-8bf6-e3549ddca4be" />
+
+<p><b>Restore/Backup</b></p>
+<img width="1635" height="492" alt="image" src="https://github.com/user-attachments/assets/8fea8547-1917-45a4-baa8-186c35589ec2" />
+<img width="1536" height="904" alt="image" src="https://github.com/user-attachments/assets/f961181b-144b-4a5f-bd6a-33855c7fde3f" />
+<img width="1467" height="456" alt="image" src="https://github.com/user-attachments/assets/3f72297e-6d96-4d07-9cd8-62a45839ea47" />
+<img width="1707" height="945" alt="image" src="https://github.com/user-attachments/assets/c18e03ee-ff77-4145-8a3f-443af736c3ca" />
+<img width="1453" height="364" alt="image" src="https://github.com/user-attachments/assets/131dc7d9-6a22-45cd-879b-5898657a60ea" />
+
+## Tìm hiểu về cPanel
+### Cài đặt
+<p>Cài tên hostname</p>
+<img width="688" height="57" alt="image" src="https://github.com/user-attachments/assets/1d922d13-bc65-4779-9307-ed7d4eea9ffa" />
+<img width="941" height="77" alt="image" src="https://github.com/user-attachments/assets/86557c44-856a-4e47-b32d-d7ff39f73bf2" />
