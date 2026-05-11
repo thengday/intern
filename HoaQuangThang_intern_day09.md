@@ -101,3 +101,4 @@
 <p>Cài tên hostname</p>
 <img width="688" height="57" alt="image" src="https://github.com/user-attachments/assets/1d922d13-bc65-4779-9307-ed7d4eea9ffa" />
 <img width="941" height="77" alt="image" src="https://github.com/user-attachments/assets/86557c44-856a-4e47-b32d-d7ff39f73bf2" />
+<img width="1920" height="496" alt="image" src="https://github.com/user-attachments/assets/afb03153-e617-4706-ba68-a35075dee8ef" />
