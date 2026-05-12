@@ -129,6 +129,9 @@
 <img width="1920" height="996" alt="image" src="https://github.com/user-attachments/assets/ded18a41-2228-407a-b41f-12bc0a136289" />
 <p>Cấu hình SSL</p>
 <img width="1172" height="250" alt="image" src="https://github.com/user-attachments/assets/88bf27c7-ffc5-4c47-8dfc-061efd2972f0" />
+<img width="870" height="848" alt="image" src="https://github.com/user-attachments/assets/aad6e068-1865-4390-adb5-de21698f225a" />
+<img width="1167" height="805" alt="image" src="https://github.com/user-attachments/assets/56002d1f-0a1d-4144-a614-37213ba82ec0" />
+
 
 <img width="758" height="878" alt="image" src="https://github.com/user-attachments/assets/12e10e43-d331-4800-82ae-7af53107f1c2" />
 <p>Generate new key</p>
