@@ -102,3 +102,58 @@
 <img width="688" height="57" alt="image" src="https://github.com/user-attachments/assets/1d922d13-bc65-4779-9307-ed7d4eea9ffa" />
 <img width="941" height="77" alt="image" src="https://github.com/user-attachments/assets/86557c44-856a-4e47-b32d-d7ff39f73bf2" />
 <img width="1920" height="496" alt="image" src="https://github.com/user-attachments/assets/afb03153-e617-4706-ba68-a35075dee8ef" />
+<img width="1375" height="494" alt="image" src="https://github.com/user-attachments/assets/1fa9b7c7-6702-45aa-ada2-4b98d43d40fd" />
+<img width="1535" height="661" alt="image" src="https://github.com/user-attachments/assets/b5c4b4e8-0da5-45ed-9656-f4c657813ef9" />
+<img width="728" height="747" alt="image" src="https://github.com/user-attachments/assets/7136960f-3722-4cc7-84f6-82ba2557e26b" />
+<img width="1916" height="667" alt="image" src="https://github.com/user-attachments/assets/c1347496-6e4a-455f-b3d3-b7ce8d78d1d7" />
+<img width="692" height="555" alt="image" src="https://github.com/user-attachments/assets/9f466c8f-ced4-43be-8448-ef39780a7622" />
+<img width="1151" height="930" alt="image" src="https://github.com/user-attachments/assets/c3066303-9482-4c92-ad5a-16fd73581280" />
+<img width="1834" height="699" alt="image" src="https://github.com/user-attachments/assets/1572ccc5-afd1-4081-908c-dcdbd2bbfea9" />
+
+<p>Cài đặt web</p>
+<p>Tạo domain hoaquangthang.com</p>
+<img width="1086" height="695" alt="image" src="https://github.com/user-attachments/assets/d3f3c330-3c86-45a9-a9a1-d2a1328ba869" />
+<img width="1014" height="384" alt="image" src="https://github.com/user-attachments/assets/bed14030-080f-4468-aa79-40909b812f26" />
+<p>Đăng nhập user người dùng vào ip 103.124.93.233:2083</p>
+<img width="1916" height="667" alt="image" src="https://github.com/user-attachments/assets/a998c0da-bff6-44cd-b716-b39ba4bd6511" />
+<p>Truy cập file manager quản lý file web</p>
+<img width="1920" height="502" alt="image" src="https://github.com/user-attachments/assets/21ac6ed1-6c80-41fb-85d9-8f0ac5186e48" />
+<img width="1516" height="582" alt="image" src="https://github.com/user-attachments/assets/f3d5d886-09d4-4a57-918a-028efa95878e" />
+
+<p>Tạo database mới</p>
+<img width="1537" height="546" alt="image" src="https://github.com/user-attachments/assets/793ff79b-22cf-47ed-9ba5-f666b2f87f16" />
+
+<img width="1041" height="653" alt="image" src="https://github.com/user-attachments/assets/d712cf2e-fdcc-47f2-8e86-0a83318996c4" />
+<img width="1610" height="824" alt="image" src="https://github.com/user-attachments/assets/d1dadbd4-daea-4c24-abde-0d1427bf7b08" />
+<img width="1469" height="542" alt="image" src="https://github.com/user-attachments/assets/aab80455-8b9e-4de4-8c90-16f1a1e2a8d2" />
+<img width="1920" height="996" alt="image" src="https://github.com/user-attachments/assets/ded18a41-2228-407a-b41f-12bc0a136289" />
+<p>Cấu hình SSL</p>
+<img width="1172" height="250" alt="image" src="https://github.com/user-attachments/assets/88bf27c7-ffc5-4c47-8dfc-061efd2972f0" />
+
+<img width="758" height="878" alt="image" src="https://github.com/user-attachments/assets/12e10e43-d331-4800-82ae-7af53107f1c2" />
+<p>Generate new key</p>
+<img width="1465" height="802" alt="image" src="https://github.com/user-attachments/assets/34e45bf0-76e8-4da7-a5b0-be569470f5db" />
+<img width="1906" height="988" alt="image" src="https://github.com/user-attachments/assets/7968eaa0-a31e-4b54-91b3-a545c1d3d243" />
+
+## Backup and restore
+<img width="1448" height="739" alt="image" src="https://github.com/user-attachments/assets/c0ff5415-4e28-4045-bf0a-fe1103664fff" />
+<p>Cài đặt full backup</p>
+<img width="884" height="520" alt="image" src="https://github.com/user-attachments/assets/d721fd69-0cb6-4cd1-a0c5-cd76041db816" />
+<img width="991" height="730" alt="image" src="https://github.com/user-attachments/assets/c05b4ad0-a874-423b-bf2c-bb99ce3e0b17" />
+<img width="1649" height="645" alt="image" src="https://github.com/user-attachments/assets/8acfd658-8fe7-4339-90bf-b5a522a11e1b" />
+<img width="1618" height="737" alt="image" src="https://github.com/user-attachments/assets/2a4ef0b4-ce91-442a-8f63-9916a78ee13f" />
+<img width="1503" height="310" alt="image" src="https://github.com/user-attachments/assets/1f83bd82-1044-4514-a7a6-80156b641eec" />
+<p><b>Giao diện và trải nghiệm sử dụng</b></p>
+cPanel từ lâu đã trở thành tiêu chuẩn ngành với giao diện quen thuộc, trực quan và được đại đa số người dùng hosting biết đến. Tuy nhiên, sự quen thuộc đó đổi lại bằng một giao diện khá cũ kỹ, nhiều tính năng hiển thị cùng lúc gây rối mắt. Plesk ngược lại có thiết kế hiện đại, gọn gàng và thân thiện hơn, hỗ trợ tốt cả trên desktop lẫn mobile. DirectAdmin có giao diện đơn giản nhất trong ba, thiếu tính thẩm mỹ nhưng nhẹ và nhanh, phù hợp với người dùng kỹ thuật không cần quá nhiều trực quan hóa.
+
+<p><b>Hỗ trợ hệ điều hành</b></p>
+Đây là điểm phân biệt rõ ràng nhất. cPanel chỉ chạy trên Linux (CentOS, AlmaLinux, CloudLinux, Ubuntu). DirectAdmin cũng chỉ hỗ trợ Linux. Trong khi đó, Plesk là lựa chọn duy nhất trong ba nền tảng hỗ trợ cả Linux lẫn Windows Server, điều này khiến Plesk trở thành lựa chọn bắt buộc nếu bạn cần chạy ứng dụng ASP.NET hoặc môi trường Windows.
+
+<p><b>Chi phí bản quyền</b></p>
+DirectAdmin có mức giá thấp nhất, thường chỉ từ vài đô mỗi tháng với license không giới hạn tài khoản, phù hợp cho nhà cung cấp hosting nhỏ muốn tiết kiệm chi phí. Plesk có nhiều gói linh hoạt theo số lượng domain, giá ở mức trung bình, phù hợp cả cá nhân lẫn doanh nghiệp. cPanel đắt nhất trong ba và từng gây tranh cãi khi thay đổi chính sách giá vào năm 2019, chuyển sang tính phí theo số lượng tài khoản — điều này khiến nhiều nhà cung cấp hosting quy mô lớn tốn thêm đáng kể chi phí vận hành.
+
+<p><b>Tính năng và hệ sinh thái</b></p>
+cPanel có hệ sinh thái lâu đời nhất với rất nhiều plugin, tích hợp bên thứ ba và tài liệu hướng dẫn phong phú. Đây là lý do cPanel vẫn chiếm thị phần lớn dù đắt hơn. Plesk nổi bật với tích hợp sẵn Docker, Git, WordPress Toolkit và hỗ trợ Node.js, Python, Ruby tốt hơn — phù hợp với developer hiện đại. DirectAdmin tuy đơn giản hơn về tính năng nhưng đủ dùng cho các nhu cầu hosting cơ bản đến trung cấp, và ngày càng được cải thiện qua các bản cập nhật gần đây.
+
+<p><b>Hiệu năng và tài nguyên hệ thống</b></p>
+DirectAdmin tiêu thụ ít tài nguyên nhất, khởi động nhanh và hoạt động ổn định ngay cả trên máy chủ cấu hình thấp. cPanel và Plesk nặng hơn do có nhiều dịch vụ chạy ngầm hơn, đòi hỏi RAM và CPU cao hơn để vận hành trơn tru.
