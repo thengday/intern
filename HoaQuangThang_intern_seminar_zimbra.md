@@ -1,4 +1,5 @@
 # Triển khai multi server trên zimbra
+## Cài đặt, cấu hình
 <img width="769" height="219" alt="image" src="https://github.com/user-attachments/assets/0b644b7f-2422-4e52-81d7-f7de673aee62" />
 
 <img width="634" height="162" alt="image" src="https://github.com/user-attachments/assets/b1834b6a-e8ae-4567-bcbb-09bda47c9957" />
@@ -77,3 +78,31 @@
 <p>Test Sync từ LDAP Replica sang Master</p>
 <img width="520" height="53" alt="image" src="https://github.com/user-attachments/assets/55483af1-3f87-4579-aa7e-eb4c50b9b5d8" />
 <img width="660" height="176" alt="image" src="https://github.com/user-attachments/assets/fb58011c-e487-4c57-9f6c-0f6aa7f1c44b" />
+
+<p><b>Kiểm tra MTA hoạt động, relay đúng.</b></p>
+<p>Gửi mail test bằng máy mail1 </p>
+<img width="1019" height="44" alt="image" src="https://github.com/user-attachments/assets/9111d782-0c9b-43fe-917f-290aee267e72" />
+<p>Sau khi gửi xong, check log zimbra.log để kiểm tra mta đã delivery chưa</p>
+<img width="1091" height="81" alt="image" src="https://github.com/user-attachments/assets/51fda577-b30e-4127-abe5-aa5b57d48743" />
+<p>Máy mta nhận 2 LDAP master và replica</p>
+<img width="659" height="97" alt="image" src="https://github.com/user-attachments/assets/d5e5dce8-4ea6-4330-b222-414af4e270d6" />
+
+<p><b>Kiểm tra Mailbox server tạo user và hoạt động.</b></p>
+<p>Kiểm tra các dịch vụ trên máy Mailbox</p>
+<img width="465" height="217" alt="image" src="https://github.com/user-attachments/assets/ed565156-7eba-4a6f-abec-c841bf5d1bb0" />
+<p>Tạo 1 user ở mailbox</p>
+<img width="726" height="66" alt="image" src="https://github.com/user-attachments/assets/0ded3f75-6e0d-4acd-99e2-14ed73a98e15" />
+<p>Kiểm tra mailbox của user vừa tạo</p>
+<img width="614" height="278" alt="image" src="https://github.com/user-attachments/assets/6b403f2c-20fc-4eea-b73f-529f244c70a4" />
+<img width="477" height="81" alt="image" src="https://github.com/user-attachments/assets/2387c180-884b-40fe-ac1b-a5e635ff2cc3" />
+<img width="614" height="278" alt="image" src="https://github.com/user-attachments/assets/7f6d43f5-44f4-45b2-a35d-4cd72ba0f838" />
+<p><b>Kiểm tra Proxy điều hướng đúng đến mailbox.</b></p>
+<p>Kiểm tra các cổng từ Mail1:MTA+Proxy đến mail2:Mailbox</p>
+<img width="694" height="167" alt="image" src="https://github.com/user-attachments/assets/b766c40a-25be-485e-ab8c-f003c0ce4fc5" />
+<img width="659" height="79" alt="image" src="https://github.com/user-attachments/assets/cc2bf050-7cde-41ad-ba27-88b5b119953a" />
+<img width="736" height="68" alt="image" src="https://github.com/user-attachments/assets/f4f30ad3-e9d7-4c1e-9314-f96eb2786587" />
+
+## Chức năng vận hành
+<p><b>Gửi/nhận mail nội bộ và ra ngoài.</b></p>
+<img width="1537" height="487" alt="image" src="https://github.com/user-attachments/assets/772819b0-b0d3-4de0-8f04-a5e23deb2249" />
+<img width="1460" height="470" alt="image" src="https://github.com/user-attachments/assets/fde93171-0a09-4983-afd7-982eae05d744" />
