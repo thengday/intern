@@ -106,3 +106,5 @@
 <p><b>Gửi/nhận mail nội bộ và ra ngoài.</b></p>
 <img width="1537" height="487" alt="image" src="https://github.com/user-attachments/assets/772819b0-b0d3-4de0-8f04-a5e23deb2249" />
 <img width="1460" height="470" alt="image" src="https://github.com/user-attachments/assets/fde93171-0a09-4983-afd7-982eae05d744" />
+
+<img width="1201" height="85" alt="image" src="https://github.com/user-attachments/assets/dec99531-54e3-4366-ae6f-c52faa6b1577" />
