@@ -43,3 +43,37 @@
 <img width="699" height="271" alt="image" src="https://github.com/user-attachments/assets/a622d5df-cdda-4f60-af50-2e559ecf79bb" />
 <img width="882" height="697" alt="image" src="https://github.com/user-attachments/assets/c3de28e0-98b6-4f6e-83dc-bb30dede6c77" />
 <img width="692" height="225" alt="image" src="https://github.com/user-attachments/assets/c78bfa73-ae41-43b5-8505-e689dfa4492a" />
+
+
+<p>Kiểm tra cài LDAP Master/Replica và đồng bộ.</p>
+<p>Gồm 2 LDAP Master và Replica</p>
+<p>LDAP Master có ip: 192.168.229.135</p>
+<p>LDAP Replica có ip: 192.168.229.140</p>
+<p>Kiểm tra cả 2 LDAP đang chạy</p>
+<p>Trên LDAP Master</p>
+<img width="513" height="125" alt="image" src="https://github.com/user-attachments/assets/0d5989cf-62e8-4902-9864-5a88532297dd" />
+<p>Trên LDAP Replica</p>
+<img width="526" height="159" alt="image" src="https://github.com/user-attachments/assets/177e9c54-eed1-4f37-879d-4286363b5441" />
+<p> Kiểm tra MMR đã enable trên cả 2 node</p>
+<p>Trên LDAP Master</p>
+<img width="711" height="451" alt="image" src="https://github.com/user-attachments/assets/2da6477f-427f-439c-9fec-2e9ee1965237" />
+<p>LDAP master đã trỏ về LDAP replica</p>
+<p>Kiểm tra MMR đã enable trên cả 2 node</p>
+<p>Trên LDAP Master</p>
+<img width="706" height="461" alt="image" src="https://github.com/user-attachments/assets/0b472ef5-8e39-4509-9598-236122020a03" />
+<p>Trên LDAP Replica</p>
+<img width="723" height="441" alt="image" src="https://github.com/user-attachments/assets/97016891-c362-4164-8607-d5f30367fcfd" />
+<p>Kiểm tra syncprov overlay trên LDAP Master</p>
+<img width="541" height="379" alt="image" src="https://github.com/user-attachments/assets/ac09a460-f6ec-4bf0-804d-c1747ad2a504" />
+<p>Module syncprov đã trỏ vào cơ sở dữ liệu của LDAP Replica</p>
+<p>Đếm số entry trên 2 node LDAP</p>
+<img width="440" height="151" alt="image" src="https://github.com/user-attachments/assets/0db72541-0f3e-4ce2-88ef-8bd987bb1fac" />
+<img width="424" height="141" alt="image" src="https://github.com/user-attachments/assets/5858eb95-f0e8-4eb1-8306-1a6c7391e793" />
+<p>Cả 2 node đều có 32 entry bằng nhau</p>
+<p>Test Sync từ LDAP Master sang LDAP Replica</p>
+<img width="527" height="74" alt="image" src="https://github.com/user-attachments/assets/c463bd41-c04b-4071-8021-345fbf603f5c" />
+<img width="677" height="166" alt="image" src="https://github.com/user-attachments/assets/57d20f74-cc3c-4b2f-beef-59416b737c82" />
+
+<p>Test Sync từ LDAP Replica sang Master</p>
+<img width="520" height="53" alt="image" src="https://github.com/user-attachments/assets/55483af1-3f87-4579-aa7e-eb4c50b9b5d8" />
+<img width="660" height="176" alt="image" src="https://github.com/user-attachments/assets/fb58011c-e487-4c57-9f6c-0f6aa7f1c44b" />
