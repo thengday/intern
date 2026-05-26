@@ -108,3 +108,26 @@
 <img width="1460" height="470" alt="image" src="https://github.com/user-attachments/assets/fde93171-0a09-4983-afd7-982eae05d744" />
 
 <img width="1201" height="85" alt="image" src="https://github.com/user-attachments/assets/dec99531-54e3-4366-ae6f-c52faa6b1577" />
+
+## Đồng bộ – HA
+### Failover LDAP Master/Replica.
+<p>Kiểm tra LDAP và mail hoạt động bình thường</p>
+<img width="505" height="139" alt="image" src="https://github.com/user-attachments/assets/7b31bd29-6288-4907-b240-bc5f48523a9b" />
+<img width="457" height="99" alt="image" src="https://github.com/user-attachments/assets/63d96130-974b-4cd0-a3a8-5ce7f225f461" />
+<img width="648" height="135" alt="image" src="https://github.com/user-attachments/assets/46b1c5df-5185-4ef9-9ff5-7a869214dd75" />
+
+<p>Tạo user trước khi failover và kiểm tra đồng bộ</p>
+<img width="509" height="67" alt="image" src="https://github.com/user-attachments/assets/6ea0d66c-4ccc-4ce3-aa2a-bb82298bd398" />
+<img width="632" height="182" alt="image" src="https://github.com/user-attachments/assets/b364d451-c3cc-4d77-a726-6ff0cc7befc8" />
+
+<p>Tắt LDAP master</p>
+<img width="595" height="140" alt="image" src="https://github.com/user-attachments/assets/f7676584-3b5c-4b06-835f-39d81252da41" />
+<img width="752" height="95" alt="image" src="https://github.com/user-attachments/assets/c65f50b0-abef-49c5-9ad2-1efe64bb240f" />
+
+<p>Tạo user trong khi LDAP master đang tắt</p>
+<img width="747" height="94" alt="image" src="https://github.com/user-attachments/assets/2e673994-bfb2-49ea-be87-4e7b28d66874" />
+
+<p>Gửi mail trong khi LDAP master đang tắt</p>
+<img width="982" height="243" alt="image" src="https://github.com/user-attachments/assets/b6f61cc0-6b21-429d-a542-a5a16ed36a8f" />
+
+### Failover Mailbox qua Proxy.
