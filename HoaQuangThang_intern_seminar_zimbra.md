@@ -184,3 +184,36 @@
 <img width="625" height="204" alt="image" src="https://github.com/user-attachments/assets/fcc7e637-315f-45a6-b1c8-44cc795e4908" />
 <p> Kiểm tra zimbraMailSSLProtocols</p>
 <img width="1020" height="171" alt="image" src="https://github.com/user-attachments/assets/4da4606f-385c-4eb7-bb09-5258888a9242" />
+
+### TLS giữa các node.
+#### TLS giữa Proxy (mail1) và Mailbox (mail2)
+<p> Kiểm tra Proxy đang dùng SSL kết nối về mail2</p>
+<img width="776" height="41" alt="image" src="https://github.com/user-attachments/assets/9f31945f-67b0-4859-b57f-584af99690a8" />
+
+<p>Test SSL từ Proxy về Mailbox port 8443</p>
+<img width="556" height="194" alt="image" src="https://github.com/user-attachments/assets/410f348d-9196-4e66-9256-8b5f5a986f1f" />
+
+<p>Kiểm tra log Proxy khi forward request</p>
+<img width="974" height="374" alt="image" src="https://github.com/user-attachments/assets/2f1f1854-49e0-4157-a89f-ec7268656c5a" />
+
+#### TLS giữa MTA (mail1) và Mailbox (mail2) qua LMTP
+<p>Kiểm tra TLS config LMTP</p>
+<img width="756" height="310" alt="image" src="https://github.com/user-attachments/assets/30cfc467-5238-442f-bb72-3c6098fbf46b" />
+<p>Test kết nối LMTP từ mail1 đến mail2</p>
+<img width="843" height="254" alt="image" src="https://github.com/user-attachments/assets/e32c132f-d895-4077-9543-320aabf98dec" />
+<p>Kiểm tra log TLS khi gửi mail</p>
+<img width="688" height="357" alt="image" src="https://github.com/user-attachments/assets/38b4f7ed-cbdb-4112-b66c-788317264469" />
+
+<p>Kiểm tra LDAP STARTTLS từ mail1</p>
+<img width="618" height="220" alt="image" src="https://github.com/user-attachments/assets/0e408190-e2fe-4781-9a8e-b6866bda4c74" />
+<p>Kiểm tra LDAP STARTTLS từ mail2</p>
+<img width="684" height="251" alt="image" src="https://github.com/user-attachments/assets/c1c7abe8-1961-4cb5-8b3a-cb8fbfbfdd35" />
+<p>Kiểm tra LDAPS port 636</p>
+<img width="647" height="216" alt="image" src="https://github.com/user-attachments/assets/58e86cfd-db65-4293-bf1c-790457fcd74e" />
+<img width="675" height="253" alt="image" src="https://github.com/user-attachments/assets/af4c7aba-0746-4d7e-98d9-9edb7ff0c917" />
+<p>Kiểm tra zimbraLdapStartTlsRequired</p>
+<img width="635" height="142" alt="image" src="https://github.com/user-attachments/assets/731bf676-13fd-4df4-a5c8-2ccda71818eb" />
+
+
+
+
