@@ -131,3 +131,56 @@
 <img width="982" height="243" alt="image" src="https://github.com/user-attachments/assets/b6f61cc0-6b21-429d-a542-a5a16ed36a8f" />
 
 ### Failover Mailbox qua Proxy.
+<p>Test qua Proxy mail1</p>
+<img width="555" height="88" alt="image" src="https://github.com/user-attachments/assets/84716a12-b4a9-4029-ba05-78be29dd7f7a" />
+<p>Truy cập mailbox</p>
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/36a06b5f-9fae-4ea8-a790-95af79691b45" />
+<p>Tắt máy mailbox</p>
+<img width="420" height="105" alt="image" src="https://github.com/user-attachments/assets/dbeec2b8-ec60-4d04-8307-dde77cf78ff0" />
+<p>kiểm tra Proxy phát hiện down</p>
+<img width="592" height="59" alt="image" src="https://github.com/user-attachments/assets/6d61ce18-42d4-49a6-915d-039453309f75" />
+<p>Khởi động và kiểm tra lại</p>
+<img width="405" height="73" alt="image" src="https://github.com/user-attachments/assets/c2eba729-9a74-4883-8193-c4efa1416848" />
+
+<img width="415" height="74" alt="image" src="https://github.com/user-attachments/assets/775a665d-f4ab-4449-981d-a45118cff8d4" />
+
+
+### Kiểm tra queue khi MTA down.
+<p>Kiểm tra MTA ban đầu</p>
+<img width="632" height="98" alt="image" src="https://github.com/user-attachments/assets/fb503dd0-c303-4834-8274-00e60f6caa4b" />
+<p>Kiểm tra gửi gmail</p>
+<img width="715" height="253" alt="image" src="https://github.com/user-attachments/assets/f4fc0d94-7891-43c8-99bb-f6ce931e560b" />
+<p>Tắt MTA</p>
+<img width="773" height="125" alt="image" src="https://github.com/user-attachments/assets/1193860f-f528-41ee-ba2d-20b0692cdcaf" />
+<p>Gửi mail khi đang tắt MTA</p>
+<img width="774" height="122" alt="image" src="https://github.com/user-attachments/assets/ddbf6e51-c8df-4490-94e2-63386fdb7413" />
+<p>Kiểm tra hàng đợi khi MTA đang tắt</p>
+<img width="748" height="234" alt="image" src="https://github.com/user-attachments/assets/6ecf7045-b013-4828-af13-1f143f22ce23" />
+<p>Mở MTA và kiểm tra mail đã được gửi chưa</p>
+<img width="978" height="312" alt="image" src="https://github.com/user-attachments/assets/c7fdb6e2-481f-4a6c-b7d3-645b38c0b191" />
+
+
+## Bảo mật – Kết nối
+### SSL/TLS webmail.
+<p>Kiểm tra certi trên mailbox</p>
+<img width="600" height="324" alt="image" src="https://github.com/user-attachments/assets/dce7f3b0-b7d4-43b9-bdf7-b82bd23d7dae" />
+<p> Kiểm tra certificate files tồn tại</p>
+<img width="600" height="254" alt="image" src="https://github.com/user-attachments/assets/5ae195e1-cc46-40d6-a8b6-ecd971a0d8f0" />
+<p>Test SSL/TLS trên HTTPS port 8443</p>
+<img width="586" height="250" alt="image" src="https://github.com/user-attachments/assets/dc7ca097-39b3-468b-beb4-35ef28893ade" />
+<img width="618" height="253" alt="image" src="https://github.com/user-attachments/assets/86f57f52-c1db-4c1a-8e69-a4b8ae272939" />
+
+<p>Test SSL/TLS qua Proxy port 443</p>
+<img width="629" height="164" alt="image" src="https://github.com/user-attachments/assets/534e8e73-9844-46cf-a628-d6e0dbcd3422" />
+<p>Kiểm tra TLS version được hỗ trợ</p>
+<img width="761" height="360" alt="image" src="https://github.com/user-attachments/assets/99f958e6-7a79-4400-b90d-61405bb773b7" />
+<p>Kiểm tra cipher suite</p>
+<img width="796" height="680" alt="image" src="https://github.com/user-attachments/assets/5d6a600a-6bbb-4f5e-9124-3340cf860156" />
+ <p>Kiểm tra certificate expiry</p>
+ <img width="752" height="192" alt="image" src="https://github.com/user-attachments/assets/3f5cb24d-01dc-4613-842a-cbf38e4acca9" />
+<p> Kiểm tra HTTPS redirect</p>
+<img width="661" height="103" alt="image" src="https://github.com/user-attachments/assets/ac9aba37-b4a6-4d52-bfb9-10cbf856dc6b" />
+<p>Kiểm tra TLS trên Admin Console</p>
+<img width="625" height="204" alt="image" src="https://github.com/user-attachments/assets/fcc7e637-315f-45a6-b1c8-44cc795e4908" />
+<p> Kiểm tra zimbraMailSSLProtocols</p>
+<img width="1020" height="171" alt="image" src="https://github.com/user-attachments/assets/4da4606f-385c-4eb7-bb09-5258888a9242" />
