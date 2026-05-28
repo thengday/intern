@@ -1,4 +1,4 @@
-# Triển khai multi server trên zimbra
+<img width="991" height="181" alt="image" src="https://github.com/user-attachments/assets/61273c1c-4210-4f3b-8233-3cd720504eec" /># Triển khai multi server trên zimbra
 ## Cài đặt, cấu hình
 <img width="769" height="219" alt="image" src="https://github.com/user-attachments/assets/0b644b7f-2422-4e52-81d7-f7de673aee62" />
 
@@ -214,6 +214,29 @@
 <p>Kiểm tra zimbraLdapStartTlsRequired</p>
 <img width="635" height="142" alt="image" src="https://github.com/user-attachments/assets/731bf676-13fd-4df4-a5c8-2ccda71818eb" />
 
+### Chống open relay.
+<p>Kiểm tra cấu hình Postfix chống relay</p>
+<img width="991" height="181" alt="image" src="https://github.com/user-attachments/assets/e57849b0-d086-4a44-9537-d2f36d457d60" />
+<p>Kiểm tra Zimbra MTA config</p>
+<img width="608" height="198" alt="image" src="https://github.com/user-attachments/assets/2d617a21-d8d1-4a4b-ba42-ff16fc60f9c8" />
+<p>Test Open Relay từ bên ngoài</p>
+<img width="742" height="466" alt="image" src="https://github.com/user-attachments/assets/6226b5fc-72d2-4cef-a255-f548c927a6cf" />
+<p>Test relay với domain nội bộ</p>
+<img width="562" height="344" alt="image" src="https://github.com/user-attachments/assets/a9e0f14c-d2ce-478e-94bb-eee36629be2d" />
+<p>Kiểm tra log khi bị chặn relay</p>
+<img width="1395" height="164" alt="image" src="https://github.com/user-attachments/assets/71ddf12d-d021-489b-b48b-d9a215607793" />
 
+### Kiểm tra phân quyền admin/domain admin/user.
+<p>Tạo các tài khoản </p>
+<p>Tạo Global Admin</p>
+<img width="532" height="74" alt="image" src="https://github.com/user-attachments/assets/770b9120-ad54-457e-86c7-03ad0e7998f5" />
 
+<p>Tạo Domain Admin</p>
+<img width="537" height="71" alt="image" src="https://github.com/user-attachments/assets/adac2cb5-7850-42ed-8128-d209ff913d7e" />
+<p>Kiểm tra global admin có đủ quyền</p>
+<img width="528" height="96" alt="image" src="https://github.com/user-attachments/assets/d9d3f6e2-187e-4f56-9641-ed86a07cafb5" />
+<p>Global Admin tạo domain mới</p>
+<img width="465" height="118" alt="image" src="https://github.com/user-attachments/assets/38f9b453-d7c5-43a8-8b2a-df115dbb382e" />
 
+<p>Kiểm tra quyền Domain Admin</p>
+<p>Gán quyền Domain Admin cho domain.com</p>
