@@ -1,6 +1,8 @@
 # Triển khai multi server trên zimbra
 ## Cài đặt, cấu hình
-<img width="769" height="219" alt="image" src="https://github.com/user-attachments/assets/0b644b7f-2422-4e52-81d7-f7de673aee62" />
+<p>Mô hình hệ thống</p>
+<img width="808" height="470" alt="image" src="https://github.com/user-attachments/assets/d0437000-7c9e-40e3-8256-14591949b3c4" />
+
 
 <img width="634" height="162" alt="image" src="https://github.com/user-attachments/assets/b1834b6a-e8ae-4567-bcbb-09bda47c9957" />
 <p>set hostname trên máy ldap</p>
