@@ -1,4 +1,4 @@
-<img width="991" height="181" alt="image" src="https://github.com/user-attachments/assets/61273c1c-4210-4f3b-8233-3cd720504eec" /># Triển khai multi server trên zimbra
+# Triển khai multi server trên zimbra
 ## Cài đặt, cấu hình
 <img width="769" height="219" alt="image" src="https://github.com/user-attachments/assets/0b644b7f-2422-4e52-81d7-f7de673aee62" />
 
@@ -240,3 +240,35 @@
 
 <p>Kiểm tra quyền Domain Admin</p>
 <p>Gán quyền Domain Admin cho domain.com</p>
+<img width="689" height="59" alt="image" src="https://github.com/user-attachments/assets/6469e3ef-2b77-4727-b8cc-0ebcfe587b5f" />
+
+<p>Tạo user kiểm tra quyền của domain admin</p>
+<img width="798" height="183" alt="image" src="https://github.com/user-attachments/assets/53a27cbc-e2d2-47a8-a85d-7e76c9108d0e" />
+
+## Hiệu năng
+### Test tải mail đồng thời
+<p>Tạo nhiều tài khoản</p>
+<img width="363" height="599" alt="image" src="https://github.com/user-attachments/assets/1f1b9e38-a1d7-46e5-9ec6-0417c4ae37e5" />
+
+<p>Gửi mail đồng thời đến nhiều user</p>
+<img width="698" height="475" alt="image" src="https://github.com/user-attachments/assets/540dac7d-9132-4b99-8c8c-1d17c48aa9d0" />
+
+<p>Kiểm tra</p>
+<img width="843" height="572" alt="image" src="https://github.com/user-attachments/assets/f0457cef-01b9-462d-8084-6cf539fa22ee" />
+
+
+### Đo thời gian login
+<p>Đo thời gian login 10 user </p>
+<img width="930" height="650" alt="image" src="https://github.com/user-attachments/assets/0cca2b3b-3c91-4e0a-996e-e81f946fb726" />
+
+### Kiểm tra hiệu năng Index khi Mailbox lớn
+<p>Tạo mailbox lớn với nhiều mail</p>
+<p>Gửi nhiều mail</p>
+<img width="582" height="262" alt="image" src="https://github.com/user-attachments/assets/4415b7cd-7c42-4157-a79b-6046444e02d3" />
+<p>Mail Quota: 104857600 </p>
+<img width="446" height="204" alt="image" src="https://github.com/user-attachments/assets/e7af3252-b371-40d7-bfb9-626319fe0c8f" />
+<p>Tạo script đo thời gian search</p>
+<img width="1054" height="570" alt="image" src="https://github.com/user-attachments/assets/65095af3-ee50-478e-ac54-01bdb1d8ffe9" />
+<img width="464" height="165" alt="image" src="https://github.com/user-attachments/assets/38540f7e-d6a7-448a-8671-94513d0f2ea0" />
+<p>Kiểm tra index status</p>
+<img width="546" height="168" alt="image" src="https://github.com/user-attachments/assets/9f3cbc11-a940-4d89-a03c-c2397d3cbbcb" />
