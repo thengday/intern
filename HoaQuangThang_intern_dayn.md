@@ -217,3 +217,63 @@ HTTP/1.1 giới thiệu header Transfer-Encoding: chunked. Máy chủ không c�
 <p>Khai tử thuật toán yếu: Loại bỏ hoàn toàn RSA tĩnh, MD5, SHA-1, RC4.</p>
 
 <p>Tinh giản tối đa: Rút gọn danh sách từ hàng trăm Cipher Suite xuống chỉ còn 5 bộ mã hóa mạnh nhất và an toàn nhất.</p>
+
+## Tìm hiểu cấu trúc các loại chứng chỉ số
+<p>Một chứng chỉ X.509 bao gồm 3 phần chính: Thông tin chứng chỉ (TBSCertificate), Thuật toán ký (Signature Algorithm), và Chữ ký số (Certificate Signature).</p>
+<p>Chi tiết các trường dữ liệu bên trong bao gồm:</p>
+<p>Version (Phiên bản): Xác định phiên bản X.509 được áp dụng. Hiện tại hầu hết đều là v3 để hỗ trợ các phần mở rộng (Extensions).</p>
+
+<p>Serial Number (Số sê-ri): Một chuỗi số nguyên dương duy nhất do CA gán cho chứng chỉ để định danh và phục vụ việc thu hồi (CRL).</p>
+
+<p>Signature Algorithm (Thuật toán ký): Thuật toán mà CA đã sử dụng để ký lên chứng chỉ này (ví dụ: sha256WithRSAEncryption hoặc ecdsa-with-SHA384).</p>
+
+<p>Issuer (Tổ chức phát hành): Thông tin của CA cấp chứng chỉ (Tên tổ chức, Quốc gia, Tên hệ thống CA).</p>
+
+<p>Validity (Thời hạn hiệu lực): Gồm hai mốc thời gian cụ thể:</p>
+
+<p>Not Before: Thời điểm chứng chỉ bắt đầu có hiệu lực.</p>
+
+<p>Not After: Thời điểm chứng chỉ hết hạn.</p>
+
+<p>Subject (Đối tượng được cấp): Thông tin của thực thể sở hữu chứng chỉ. Đối với website, phần quan trọng nhất ở đây là CN (Common Name - ví dụ: *.domain.com).</p>
+
+<p>Subject Public Key Info (Thông tin khóa công khai): * Thuật toán của khóa (RSA, DSA, hoặc ECC).</p>
+
+<p>Chính chuỗi Khóa công khai (Public Key) của đối tượng được cấp.</p>
+
+<p>Phân biệt DV, OV, EV certificates — khi nào dùng loại nào và chi phí tương ứng.</p>
+
+<p>Chứng chỉ DV là loại chứng chỉ cơ bản và phổ biến nhất trên Internet hiện nay. Đặc điểm lớn nhất của DV là quy trình cấp phát hoàn toàn tự động và diễn ra rất nhanh chóng, chỉ mất từ hai đến năm phút. Tổ chức cấp phát (CA) chỉ kiểm tra xem bạn có thực sự sở hữu tên miền đó hay không thông qua việc cấu hình DNS, tải một tệp tin lên hosting hoặc xác thực qua email quản trị của tên miền. Do hoàn toàn không xác minh danh tính chủ thể đứng sau, loại chứng chỉ này không chứa thông tin về doanh nghiệp.</p>
+
+<p>Khi nào nên dùng: Chứng chỉ DV phù hợp nhất cho các blog cá nhân, trang tin tức, các ứng dụng nội bộ (Internal Apps) hoặc các môi trường thử nghiệm, phòng thí nghiệm (Lab/Staging) không thu thập dữ liệu giao dịch nhạy cảm.</p>
+
+<p>Chi phí tương ứng: Bạn có thể sử dụng hoàn toàn miễn phí thông qua các tổ chức như Let's Encrypt hoặc ZeroSSL với thời hạn 90 ngày và cấu hình tự động gia hạn. Nếu chọn các phiên bản thương mại có gói bảo hiểm đi kèm từ các hãng lớn như Sectigo hay DigiCert, mức giá cũng rất rẻ, chỉ dao động từ 200.000 đến 400.000 VNĐ / năm.</p>
+
+
+<p>Ở phân khúc cao hơn, **chứng chỉ OV** mang lại mức độ tin cậy rõ ràng hơn cho người dùng truy cập. Khác với DV, quy trình cấp phát OV đòi hỏi sự can thiệp và kiểm tra thủ công từ phía các chuyên gia kiểm định của tổ chức CA. Họ sẽ yêu cầu doanh nghiệp cung cấp giấy phép đăng ký kinh doanh, kiểm tra sự tồn tại hợp pháp của tổ chức trên các cổng thông tin chính phủ và gọi điện xác minh trực tiếp với người đại diện. Quá trình này thường kéo dài từ một đến ba ngày làm việc. Khi người dùng click vào chi tiết chứng chỉ trên trình duyệt, họ sẽ thấy rõ tên công ty và địa chỉ của doanh nghiệp sở hữu website.</p>
+
+
+<p>Khi nào nên dùng: Đây là lựa chọn tối ưu cho website chính thức của các doanh nghiệp vừa và nhỏ, các trang thương mại điện tử tầm trung hoặc hệ thống Mail Server doanh nghiệp để nâng cao độ uy tín của IP và tên miền, tránh nguy cơ bị kẻ xấu giả mạo thương hiệu (phishing).</p>
+
+
+<p>Chi phí tương ứng: Giá của chứng chỉ OV thương mại thường nằm trong khoảng từ 800.000 đến 2.000.000 VNĐ / năm, tùy thuộc vào thương hiệu cung cấp và các tính năng đi kèm như hỗ trợ Wildcard (bảo mật cho không giới hạn tên miền con).</p>
+
+
+<p>**Chứng chỉ EV** đại diện cho tiêu chuẩn bảo mật và xác thực khắt khe nhất trong thế giới số. Quy trình thẩm định để cấp phát chứng chỉ EV vô cùng nghiêm ngặt, kéo dài từ ba đến bảy ngày làm việc. Tổ chức CA không chỉ kiểm tra giấy tờ pháp lý mà còn thẩm định chuyên sâu về tình trạng hoạt động thực tế, tài khoản ngân hàng, nhân sự và quyền sở hữu độc quyền đối với thương hiệu của doanh nghiệp. Nhờ tính pháp lý chặt chẽ này, chứng chỉ EV đi kèm với mức bảo hiểm rủi ro cực kỳ cao, lên tới hàng triệu USD để bảo vệ doanh nghiệp trong trường hợp chứng chỉ bị lỗi hoặc bị bẻ gãy.</p>
+
+
+<p>Khi nào nên dùng: Chứng chỉ EV là giải pháp bắt buộc hoặc được khuyến nghị tối đa cho các tổ chức tài chính, ngân hàng, ví điện tử, sàn chứng khoán, các cơ quan chính phủ hoặc các tập đoàn lớn có lượng người dùng khổng lồ nhằm khẳng định uy tín tuyệt đối.</p>
+
+
+<p>Chi phí tương ứng: Vì là dòng sản phẩm cao cấp, chi phí cho chứng chỉ EV tương đối đắt đỏ, thường dao động từ 2.500.000 đến trên 6.000.000 VNĐ / năm.</p>
+
+## Thực hành: tạo self-signed certificate bằng OpenSSL, cấu hình Nginx/Apache với HTTPS, kiểm tra bằng openssl s_client.
+<p>TẠO THƯ MỤC</p>
+<img width="462" height="71" alt="image" src="https://github.com/user-attachments/assets/fe86d4e5-4602-489d-8bcc-d4820776bee3" />
+<p>TẠO PRIVATE KEY VÀ CERTIFICATE</p>
+<img width="664" height="64" alt="image" src="https://github.com/user-attachments/assets/6e70dc57-f188-4dd7-ac44-43b696d62e6f" />
+<img width="907" height="399" alt="image" src="https://github.com/user-attachments/assets/c2f92a3d-1cef-4759-80a3-9ca65cb955ad" />
+<p>CẤU HÌNH WEB SERVER</p>
+<img width="896" height="499" alt="image" src="https://github.com/user-attachments/assets/9bd77f37-d7ff-4947-8aaf-956ee605c24b" />
+<img width="1919" height="173" alt="image" src="https://github.com/user-attachments/assets/44cd2931-d60a-407a-b0f8-8d73109a4791" />
+
