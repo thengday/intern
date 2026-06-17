@@ -37,3 +37,65 @@
 | **Mối đe dọa ngăn chặn** | Quét cổng (Port scanning), DDoS hạ tầng, truy cập trái phép | Lỗ hổng web (OWASP Top 10) như **SQL Injection, XSS** |
 | **Vị trí triển khai** | Cửa ngõ hệ thống (Gateway), giữa Internet và mạng nội bộ | Đứng trước Web Server (sau Load Balancer/Reverse Proxy) |
 
+# OWASP Core Rule Set (CRS)
+## Nghiên cứu rule chuẩn hóa
+### Khái niệm và Mục tiêu của Chuẩn hóa
+<p>Chuẩn hóa dữ liệu (hay trong ModSecurity/Coraza gọi là Transformation Functions) là quá trình biến đổi dữ liệu thô từ HTTP Request (GET/POST parameters, Headers, Cookies...) về một dạng chuẩn duy nhất (Canonical Form) trước khi đưa qua bộ lọc Regular Expression (Regex).</p>
+
+<p>Hacker thường sử dụng các kỹ thuật làm nhiễu hoặc mã hóa chuỗi nhằm qua mặt các Signature (dấu hiệu nhận diện) tĩnh của WAF. Nếu không có bước chuẩn hóa, WAF sẽ bị "mù" trước các biến thể này.</p>
+
+### Cấu trúc tập luật
+
+<p>Theo tài liệu kỹ thuật về OWASP CRS và ModSecurity, cấu trúc tập luật được sử dụng trong công cụ này có cú pháp “SecRule VARIABLES OPERATOR [ACTIONS]” và được diễn giải tóm tắt như sau:
+
+<p>- SecRule: Là từ khóa bắt đầu một luật trong ModSecurity.</p>
+
+<p>- VARIABLES: Là biến hoặc tham số mà ModSecurity sẽ kiểm tra trong yêu cầu hoặc phản hồi HTTP. Các biến có thể là:</p>
+
+<p>%{REQUEST_URI}: Địa chỉ URL của yêu cầu.</p>
+
+<p>%{QUERY_STRING}: Chuỗi truy vấn của URL.</p>
+
+<p>%{HTTP_USER_AGENT}: Thông tin trình duyệt của người dùng.</p>
+
+<p>%{REQUEST_BODY}: Nội dung của yêu cầu HTTP.</p>
+
+<p>Các biến khác liên quan đến HTTP headers, cookies...</p>
+
+<p>- OPERATOR: Là toán tử dùng để so sánh hoặc kiểm tra. Các toán tử phổ biến bao gồm:</p>
+
+<p>==: Kiểm tra sự bằng nhau.</p>
+
+<p>@contains: Kiểm tra sự tồn tại của một chuỗi con.</p>
+
+<p>@rx: kiểm tra với một biểu thức chính quy.</p>
+
+<p>@startswith: kiểm tra nếu chuỗi bắt đầu bằng một giá trị cụ thể.</p>
+
+<p>[ACTIONS]: các hành động cần thực hiện khi điều kiện luật được kích hoạt. Các hành động thường gặp là:</p>
+
+<p>deny: Chặn yêu cầu.</p>
+
+<p>allow: Cho phép yêu cầu.</p>
+
+<p>log: Ghi lại thông tin yêu cầu.</p>
+
+<p>alert: Cảnh báo về sự kiện.</p>
+
+<p>redirect: Chuyển hướng yêu cầu đến một URL khác.</p>
+
+<p>Ví dụ luật trong ModSecurity là “SecRule REQUEST_URI "@contains /wp-login.php" "deny,log" thì nghĩa là nó sẽ chặn (deny) và ghi lại (log) mọi yêu cầu có chứa đoạn mã “/wp-login.php” trong URL.</p>
+
+### Thuật toán so khớp
+<p>Các thành phần sau trong mỗi yêu cầu (request) từ máy khách được so khớp với tập luật:</p>
+
+<p>- msc_process_request_headers: kiểm tra header của luồng dữ liệu http khi thực hiện request.</p>
+
+<p>- msc_process_request_body: kiểm tra nội dung body của luồng dữ liệu http khi thực hiện request.</p>
+
+<p>- msc_process_response_headers: kiểm tra header của luồng dữ liệu http khi thực hiện response.</p>
+
+<p>- msc_process_response_body: kiểm tra nội dung body của luồng dữ liệu http khi thực hiện response.</p>
+
+<p>Quá trình so khớp này thường được thực hiện dựa trên thuật toán Boyer-Moore-Horspool theo cách thức như sau:</p>
+<img width="528" height="435" alt="image" src="https://github.com/user-attachments/assets/608231fb-694c-4aba-8596-4fbb9dffce51" />
