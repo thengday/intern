@@ -26,3 +26,14 @@
 <p>Dạng thứ hai của việc phát hiện tấn công là dựa trên các dấu hiệu bất thường. Ngoài các dạng tấn công được liệt kê cụ thể, còn tồn tại nhiều dạng tấn công khác. Các dấu hiệu bất thường bao gồm “bad user-agent”. Ví dụ về một “bad user-agent” có thể được mô tả như sau:</p>
 
 <p>(.|\s|\n)?(script|about|applet|activex|chrome|object)(.|\s|\n)?>.*<(.|\s|\n)?(script|about|applet|activex|chrome|object)</p>
+  
+## Phân biệt network firewall vs WAF.
+
+| Tiêu chí | Network Firewall (Tường lửa mạng) | WAF (Web Application Firewall) |
+| :--- | :--- | :--- |
+| **Tầng hoạt động (OSI)** | Tầng mạng và giao vận (**Layer 3 & Layer 4**) | Tầng ứng dụng (**Layer 7**) |
+| **Đối tượng bảo vệ** | Toàn bộ hạ tầng mạng, máy chủ và thiết bị nội bộ | Riêng biệt cho các ứng dụng Web (HTTP/HTTPS) và API |
+| **Cơ chế lọc traffic** | Dựa trên **IP nguồn/đích, Cổng (Port)** và Giao thức | Dựa trên **Nội dung request**, Headers, Cookies và Payload |
+| **Mối đe dọa ngăn chặn** | Quét cổng (Port scanning), DDoS hạ tầng, truy cập trái phép | Lỗ hổng web (OWASP Top 10) như **SQL Injection, XSS** |
+| **Vị trí triển khai** | Cửa ngõ hệ thống (Gateway), giữa Internet và mạng nội bộ | Đứng trước Web Server (sau Load Balancer/Reverse Proxy) |
+
