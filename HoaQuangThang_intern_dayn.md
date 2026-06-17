@@ -141,7 +141,79 @@ HTTP/1.1 giới thiệu header Transfer-Encoding: chunked. Máy chủ không c�
 
 ## Thực hành: dùng curl -v để quan sát raw headers của ít nhất 5 website khác nhau
 <img width="1321" height="598" alt="image" src="https://github.com/user-attachments/assets/576d41a9-7f20-423f-a822-d74774360ff4" />
+
+
 <img width="1345" height="638" alt="image" src="https://github.com/user-attachments/assets/a25d1743-9e3f-4d27-9b37-ed88edbb752d" />
 <img width="903" height="337" alt="image" src="https://github.com/user-attachments/assets/e80f4947-3ee5-4d76-8d31-540dc8f436ce" />
 <img width="1382" height="698" alt="image" src="https://github.com/user-attachments/assets/c30d4caf-2509-4765-846e-0914840e0f3d" />
 <img width="902" height="408" alt="image" src="https://github.com/user-attachments/assets/6793bf57-c533-42f0-90f6-6914c1809eb0" />
+
+# SSL / TLS 
+## Nghiên cứu SSL/TLS handshake
+<p>SSL/TLS Handshake là một quy trình trao đổi thông tin giữa máy khách (client) và máy chủ (server) nhằm xây dựng lớp kết nối bảo mật cho phiên làm việc, thông qua giao thức SSL hoặc TLS, trước khi bất kỳ dữ liệu thực tế nào được truyền đi.</p>
+<p>Trong quá trình này, cả hai bên sẽ lần lượt xác thực lẫn nhau, thương lượng và lựa chọn bộ thuật toán mã hóa phù hợp, kiểm tra và xác minh chứng chỉ số của máy chủ, đồng thời cùng tạo khóa phiên dùng để mã hóa toàn bộ thông tin trao đổi về sau.</p>
+<p>SSL/TLS Handshake là cơ chế nền tảng giúp thiết lập kết nối an toàn trên Internet, đặc biệt quan trọng vì nếu không có quy trình này, mọi dữ liệu sẽ truyền đi dưới dạng rõ ràng dễ bị đánh cắp hoặc chỉnh sửa.</p>
+<p>Tầm quan trọng của SSL/TLS Handshake:</p>
+<p>Xác thực danh tính (Authentication): Đảm bảo máy khách đang trao đổi với đúng máy chủ, loại bỏ nguy cơ bị tấn công xen giữa (Man-in-the-Middle), bảo vệ khỏi các mối đe dọa mạo danh khi truyền thông tin mật như tài khoản, dữ liệu cá nhân hoặc giao dịch nhạy cảm.</p>
+<p>Mã hóa dữ liệu (Encryption): Mọi thông tin trao đổi qua kết nối đều được chuyển thành định dạng mã hóa, khiến cho bên thứ ba không thể đọc được nội dung, cho dù có chặn được dữ liệu trên đường truyền.</p>
+<p>Đảm bảo toàn vẹn (Integrity): Hệ thống sử dụng các thuật toán xác thực để phát hiện bất kỳ sự thay đổi hoặc chỉnh sửa nào của dữ liệu trong quá trình truyền tải, mọi dấu hiệu gian lận đều sẽ bị phát hiện ngay lập tức.</p>
+
+<p>Các thành phần trong SSL/TLS Handshake</p>
+<p>Quá trình SSL/TLS handshake bao gồm nhiều thành phần và công nghệ bảo mật phối hợp, đảm bảo thiết lập một kết nối mã hóa an toàn giữa client (trình duyệt) và server:</p>
+<p>Asymmetric Encryption (Mã hóa bất đối xứng): Là phương pháp sử dụng một cặp khóa – gồm khóa công khai và khóa riêng tư cho quá trình mã hóa và giải mã dữ liệu. Thông tin được mã hóa bằng khóa công khai chỉ có thể giải mã bằng khóa riêng tư tương ứng. Trong quá trình bắt tay SSL/TLS, mã hóa bất đối xứng được dùng để truyền đạt khóa phiên một cách an toàn từ client đến server, đồng thời bảo vệ nội dung khỏi bị nghe lén trong quá trình trao đổi khóa.</p>
+<p>Symmetric Encryption (Mã hóa đối xứng): Sau khi client và server đã chia sẻ khóa phiên một cách an toàn nhờ mã hóa bất đối xứng, họ sẽ sử dụng chung một khóa đối xứng này để mã hóa và giải mã toàn bộ dữ liệu truyền qua lại trong suốt phiên làm việc. Điều này giúp đảm bảo quá trình truyền thông tin diễn ra nhanh chóng, hiệu quả mà vẫn giữ được tính bảo mật.</p>
+<p>Digital Certificates (Chứng chỉ số): Chứng chỉ số là tập hợp các thông tin điện tử xác thực danh tính của website hoặc tổ chức sở hữu website đó. Chứng chỉ này được cấp bởi các tổ chức chứng thực số uy tín. Trong quá trình handshake, server sẽ gửi chứng chỉ số cho client để xác minh tính xác thực, giúp người dùng đảm bảo rằng họ đang kết nối với đúng địa chỉ, tránh nguy cơ bị mạo danh website.</p>
+<p>Cipher Suites: Cipher suite là một bộ các thuật toán được hai bên thỏa thuận sử dụng xuyên suốt phiên SSL/TLS. Bộ thuật toán này gồm những cơ chế như phương thức trao đổi khóa, thuật toán mã hóa, hàm băm để kiểm tra tính toàn vẹn dữ liệu,… Sự thống nhất cipher suite bảo đảm rằng cả client và server đều dùng những thuật toán tương thích để bảo vệ thông tin.</p>
+<p>Session Keys: Sau khi hoàn tất trao đổi khóa, client và server tạo ra các khóa đối xứng chỉ dùng cho phiên giao dịch đó. Tất cả dữ liệu trao đổi sau này giữa hai bên sẽ được mã hóa bằng khóa phiên này, nâng cao tính riêng tư và khả năng bảo vệ trước việc nghe lén qua mạng.</p>
+<p>Mutual TLS (mTLS): Đây là mức độ xác thực nâng cao, trong đó không chỉ server xác thực danh tính bằng chứng chỉ số, mà cả client cũng cần trình xuất chứng chỉ số của mình để xác thực với server. Mutual TLS tăng cường mức độ tin cậy và bảo mật, phù hợp với các môi trường yêu cầu kiểm tra hai chiều nghiêm ngặt.
+</p>
+
+<p>Quy trình SSL/TLS Handshake hoạt động:</p>
+<p>Bước 1: Khởi tạo kết nối và gửi ClientHello</p>
+<p>Quá trình TLS handshake bắt đầu ngay sau khi client (Ví dụ: trình duyệt web) thiết lập kết nối tới máy chủ qua HTTPS. Client sẽ gửi một thông điệp ClientHello đến server. Thông điệp này bao gồm danh sách phiên bản TLS mà client hỗ trợ, các bộ mã hóa (cipher suites), tham số mở rộng và một chuỗi random do client sinh ra. Đây là nền tảng để hai bên đàm phán các yếu tố kỹ thuật đảm bảo cho việc thiết lập bảo mật ngay từ đầu.  </p>
+
+<p>Bước 2: Server lựa chọn thông số và xác thực danh tính</p>
+<p>Khi nhận được ClientHello, server sẽ phản hồi bằng thông điệp ServerHello. Server chọn phiên bản TLS và cipher suite sẽ sử dụng trong phiên làm việc này, đồng thời gửi random của server và chứng chỉ số (chuẩn hóa danh tính) cho client. Ở bước này, client sẽ kiểm tra chứng chỉ số của server để xác thực nguồn gốc và đảm bảo server thực sự sở hữu khóa bí mật tương ứng với chứng chỉ.</p>
+
+<p>Bước 3: Trao đổi tham số bảo mật và sinh khóa phiên</p>
+<p>Sau khi xác thực chứng chỉ, client và server tiếp tục trao đổi các tham số mật mã (tùy phương pháp như Diffie-Hellman, ECDHE…). Hai bên cùng nhau tạo ra một chuỗi bí mật dùng chung, gọi là premaster secret. Từ premaster secret và các giá trị random đã trao đổi trước đó, mỗi bên tự động sinh ra một bộ khóa phiên cho quá trình mã hóa đối xứng về sau.</p>
+
+<p>Bước 4: Xác nhận khởi tạo kênh bảo mật</p>
+<p>Client và server tiếp tục gửi cho nhau các thông điệp xác nhận cuối cùng, tất cả đều đã được mã hóa bởi session key vừa được khởi tạo. Việc xác nhận thành công cho thấy hai bên đã liên kết chặt chẽ về mặt kỹ thuật và bảo mật, mọi dữ liệu sau đây đều được đảm bảo an toàn, toàn vẹn trên kênh truyền.</p>
+
+<p>Bước 5: Truyền dữ liệu mã hóa an toàn</p>
+<p>Khi handshake hoàn tất, cả hai bên bắt đầu truyền tải dữ liệu thực bằng kênh mã hóa đối xứng dựa trên session key vừa thỏa thuận. Mỗi phiên kết nối là duy nhất, đảm bảo tất cả thông tin giao dịch không thể bị nghe lén, giả mạo, hoặc can thiệp bởi bên thứ ba trong suốt quá trình truyền.</p>
+
+## Tìm hiểu các phiên bản TLS 1.0, 1.1, 1.2, 1.3
+<p>TLS 1.0</p>
+<p>Kế thừa SSL 3.0: Cơ chế hoạt động rất gần với SSL 3.0, dễ bị ép hạ cấp giao thức (downgrade attack).</p>
+
+<p>Thuật toán mã hóa yếu: Phụ thuộc vào các hàm băm cũ như MD5 và SHA-1.</p>
+
+<p>Kém an toàn: Dễ bị tổn thương hoàn toàn trước các cuộc tấn công kinh điển như BEAST và POODLE.</p>
+
+<p>TLS 1.1</p>
+
+<p>Chống tấn công CBC: Bổ sung vector khởi tạo (IV) ngẫu nhiên để bảo vệ chuỗi khối dữ liệu.</p>
+
+<p>Cải tiến nhỏ: Vá một số lỗ hổng của bản 1.0 nhưng không thay đổi cấu trúc nền tảng.</p>
+
+<p>Hiệu năng thấp: Vẫn tốn thời gian kết nối và sử dụng các bộ mã hóa lỗi thời.</p>
+
+<p>TLS 1.2</p>
+
+<p>Nâng cấp thuật toán: Thay thế MD5/SHA-1 bằng SHA-256; hỗ trợ các bộ mã hóa nâng cao mã xác thực (AEAD) như AES-GCM.</p>
+
+<p>Độ trễ cao: Quy trình bắt tay (Handshake) phức tạp, bắt buộc tốn 2 RTT (2 vòng phản hồi) để thiết lập kết nối.</p>
+
+<p>Cấu hình cồng kềnh: Hỗ trợ quá nhiều Cipher Suite (hàng trăm loại cả cũ lẫn mới), nếu cấu hình sai server rất dễ bị tấn công khai thác.</p>
+
+<p>TLS 1.3</p>
+
+<p>Tốc độ tối ưu: Rút gọn kết nối xuống còn 1 RTT. Hỗ trợ 0-RTT Resumption (gửi dữ liệu ngay lập tức nếu client và server đã từng kết nối).</p>
+
+<p>Bắt buộc Perfect Forward Secrecy (PFS): Chỉ dùng các thuật toán trao đổi khóa tạm thời (ECDHE, DHE). Lộ khóa server hiện tại cũng không giải mã được dữ liệu cũ.</p>
+
+<p>Khai tử thuật toán yếu: Loại bỏ hoàn toàn RSA tĩnh, MD5, SHA-1, RC4.</p>
+
+<p>Tinh giản tối đa: Rút gọn danh sách từ hàng trăm Cipher Suite xuống chỉ còn 5 bộ mã hóa mạnh nhất và an toàn nhất.</p>
