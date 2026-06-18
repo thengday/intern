@@ -99,3 +99,111 @@
 
 <p>Quá trình so khớp này thường được thực hiện dựa trên thuật toán Boyer-Moore-Horspool theo cách thức như sau:</p>
 <img width="528" height="435" alt="image" src="https://github.com/user-attachments/assets/608231fb-694c-4aba-8596-4fbb9dffce51" />
+
+### Cơ chế chuẩn hóa dữ liệu
+<p>Trước khi kiểm tra một Request có phải là tấn công hay không, CRS phải đưa dữ liệu về dạng "chuẩn" nhất. Kẻ tấn công thường sử dụng các kỹ thuật Obfuscation như encode URL, chèn khoảng trắng, đổi chữ hoa/chữ thường để qua mặt WAF.</p>
+<p>CRS sử dụng các hàm chuyển đổi của ModSecurity để giải quyết vấn đề này:</p>
+<p>Giải mã: Chuyển đổi các định dạng mã hóa về văn bản thô.</p>
+<p>t:urlDecode: Giải mã URL-encoded (ví dụ: %27 thành ').</p>
+
+<p>t:htmlEntityDecode: Giải mã các thực thể HTML (ví dụ: &#x27; thành ').</p>
+
+<p>t:base64Decode: Giải mã chuỗi Base64.</p>
+
+<p>Xử lý chuỗi (String Manipulation): * t:lowercase: Chuyển toàn bộ thành chữ thường để so sánh chuẩn (ví dụ: sElEcT thành select).</p>
+
+<p>t:compressWhitespace: Thu gọn nhiều khoảng trắng liên tiếp hoặc ký tự xuống dòng thành một khoảng trắng duy nhất nhằm phá vỡ các kỹ thuật bypass bằng khoảng trắng.</p>
+<p>Quy trình hoạt động: Một Input đầu vào có thể được áp dụng chuỗi nhiều hàm chuyển đổi (ví dụ: t:urlDecode,t:htmlEntityDecode,t:lowercase) trước khi đối sánh với Regex của Rule.</p>
+
+### Cách CRS phân loại
+
+<p>911xxx (Method Enforcement): Kiểm tra và chặn các HTTP Method lạ hoặc nguy hiểm (không phải GET, POST, PUT...).</p>
+
+<p>913xxx (Scanner Detection): Phát hiện các công cụ quét lỗ hổng tự động (như Acunetix, Nikto, sqlmap, Nmap) dựa trên hành vi hoặc User-Agent.</p>
+
+<p>920xxx (Protocol Violations): Phát hiện hành vi vi phạm giao thức HTTP chuẩn (thiếu header bắt buộc, sai Content-Length, HTTP smuggling...).</p>
+
+<p>921xxx (HTTP Request Smuggling): Các quy tắc chuyên biệt chống lại tấn công thao túng Request giữa Proxy và Backend.</p>
+
+<p>930xxx (Local File Inclusion - LFI): Ngăn chặn nỗ lực duyệt thư mục để đọc file hệ thống (như ../../etc/passwd).</p>
+
+<p>931xxx (Remote File Inclusion - RFI): Chặn việc chèn link độc hại từ bên ngoài vào câu lệnh include của ứng dụng.</p>
+
+<p>932xxx (Remote Code Execution - RCE): Phát hiện việc thực thi các lệnh hệ điều hành (như id, whoami, powershell) qua input.</p>
+
+<p>933xxx (PHP Injection): Phát hiện việc chèn và thực thi mã PHP độc hại (các hàm eval(), system()).</p>
+
+<p>941xxx (Cross-Site Scripting - XSS): Phát hiện mã script (JavaScript, HTML) độc hại chèn vào ứng dụng nhằm tấn công trình duyệt người dùng.</p>
+
+<p>942xxx (SQL Injection - SQLi): Phát hiện từ khóa, hàm hoặc biểu thức logic SQL để thao túng cơ sở dữ liệu.</p>
+
+<p>943xxx (Session Fixation): Phát hiện các nỗ lực giả mạo hoặc cố định Session ID trong Cookie hoặc URL.</p>
+
+### Cơ chế chặn 
+
+<p>CRS nổi tiếng với việc không sử dụng cơ chế chặn ngay lập tức khi gặp một rule khớp, mà sử dụng cơ chế Tính điểm bất thường</p>
+<p>Mỗi khi một Request vi phạm một Rule, nó chưa bị chặn ngay mà sẽ bị cộng một số điểm "bất thường" dựa trên mức độ nghiêm trọng của Rule đó:</p>
+<p>CRITICAL (Điểm = 5): Khả năng cao là tấn công thực sự (ví dụ: SQLi, RCE thành công).</p>
+
+<p>ERROR (Điểm = 4): Lỗi nghiêm trọng, thường là rò rỡ thông tin hoặc vi phạm giao thức nặng.</p>
+
+<p>WARNING (Điểm = 3): Các hành vi đáng ngờ (ví dụ: thiếu một số header phổ biến).</p>
+
+<p>NOTICE (Điểm = 2): Các vi phạm giao thức chuẩn nhỏ.</p>
+
+<p>Quy trình chặn qua hai giai đoạn: </p>
+<p>Phase 2 (Request Check): Khi Request đi qua, các rule từ 910 đến 944 sẽ kiểm tra. Nếu vi phạm, điểm số sẽ được cộng dồn vào biến TX:anomaly_score.</p>
+
+<p>Rule 949110 (Inbound Blocking Rule): Nằm ở cuối Phase 2. Quy tắc này sẽ kiểm tra xem tổng điểm TX:anomaly_score có vượt quá ngưỡng cấu hình (Inbound Anomaly Score Threshold - mặc định là 5) hay không. Nếu bằng hoặc vượt quá, WAF sẽ thực hiện hành động chặn (thường trả về lỗi HTTP 403 Forbidden).</p>
+
+<p>Phase 4 (Response Check) là giai đoạn WAF kiểm tra dữ liệu phản hồi từ máy chủ (Backend) trước khi trả về cho người dùng.</p>
+
+<p>Nhiệm vụ chính:</p>
+
+<p>Chống rò rỉ dữ liệu (DLP): Chặn việc lộ số thẻ tín dụng, thông tin cá nhân, mã nguồn.</p>
+
+<p>Giấu lỗi hệ thống: Chặn các thông báo lỗi chi tiết của Database (MySQL, Oracle...) hoặc mã PHP/Apache để kẻ tấn công không thể dò tìm lỗ hổng.</p>
+
+<p>Phát hiện Webshell: Chặn dữ liệu trả về nếu phát hiện dấu hiệu máy chủ đã bị chiếm quyền và đang thực thi lệnh độc hại.</p>
+
+<p>Cơ chế chặn: Nếu tổng điểm vi phạm ở phản hồi (TX:outbound_anomaly_score) vượt ngưỡng cấu hình (mặc định là 4), Rule 959110 sẽ chặn đứng và trả về lỗi HTTP 500, ngăn không cho dữ liệu nhạy cảm thoát ra ngoài.</p>
+
+### Cài đặt và cấu hình trên Apache: bật module, cấu hình SecRuleEngine, tích hợp OWASP CRS.
+<p>Cài đặt Apache</p>
+<img width="820" height="317" alt="image" src="https://github.com/user-attachments/assets/2efa8593-ae81-4b9d-ab40-022e8614ec12" />
+
+<img width="823" height="480" alt="image" src="https://github.com/user-attachments/assets/ea47d40f-f4c5-4403-a56c-1ad358ac833e" />
+<p>Bật module</p>
+<img width="599" height="122" alt="image" src="https://github.com/user-attachments/assets/1f1d155d-af27-4537-b192-e2a52f5023d1" />
+
+#### Cấu hình SecRuleEngine tích hợp OWASP CRS.
+<p>Tạo file cấu hình</p>
+<img width="911" height="42" alt="image" src="https://github.com/user-attachments/assets/17eb1a1e-fe33-4dba-bd75-e8ef44f6d24e" />
+<p>Mở file để chỉnh sửa</p>
+<p>Bật SecruleEngine</p>
+<img width="767" height="460" alt="image" src="https://github.com/user-attachments/assets/4dccdfe3-527a-49e5-bdda-45cb69c3ce6c" />
+<p>Tải bộ luật CRS</p>
+<img width="826" height="493" alt="image" src="https://github.com/user-attachments/assets/99e39a92-10f4-451a-b592-689e9394ac68" />
+<p>Kiểm tra cú pháp</p>
+<img width="935" height="93" alt="image" src="https://github.com/user-attachments/assets/4501f351-6981-4102-a14f-51019f741029" />
+<p>Kiểm tra SQLi và đọc file hệ thống</p>
+<img width="798" height="236" alt="image" src="https://github.com/user-attachments/assets/90edf975-2d17-420b-871a-57f5f1174436" />
+<p>Check log hệ thống hiển thị lỗi 403</p>
+<img width="1044" height="501" alt="image" src="https://github.com/user-attachments/assets/67df66a4-5e38-4f5b-81b5-4cdcea43e514" />
+
+## Cài đặt ModSecurity 3 (connector) trên Nginx: biên dịch hoặc dùng dynamic module, cấu hình modsecurity.conf.
+### Cài Nginx 
+<img width="913" height="433" alt="image" src="https://github.com/user-attachments/assets/4e38a167-185a-4bb8-87e1-f5d792c7772a" />
+<p>CÀI ĐẶT CÁC THƯ VIỆN PHỤ THUỘC</p>
+<img width="1043" height="409" alt="image" src="https://github.com/user-attachments/assets/54c16236-fc22-4098-8664-14699b724ed1" />
+<p>CÀI ĐẶT LIBMODSECURITY</p>
+<img width="1034" height="534" alt="image" src="https://github.com/user-attachments/assets/2af34efe-335c-4503-8692-1220e1b474e3" />
+<img width="916" height="612" alt="image" src="https://github.com/user-attachments/assets/12f20709-089d-4125-a91b-c4e90a98f666" />
+<p>Tải mã nguồn bộ kết nối Nginx Connector:</p>
+<img width="899" height="617" alt="image" src="https://github.com/user-attachments/assets/02c176bf-f17c-42ff-af04-98e9a20734d5" />
+<p>Biên dịch module</p>
+<img width="818" height="622" alt="image" src="https://github.com/user-attachments/assets/21f7564d-c21b-4260-a575-65361bc5ad10" />
+<img width="932" height="111" alt="image" src="https://github.com/user-attachments/assets/b921b29a-e167-4aed-85ec-1803ca2821d9" />
+
+<p>Khai báo nạp Module và cấu hình modsecurity.conf</p>
+<img width="519" height="192" alt="image" src="https://github.com/user-attachments/assets/19b6e8fa-2ceb-48e3-acbe-88879378d63a" />
