@@ -145,3 +145,9 @@
 
 <p>Kiểm tra các dịch vụ của máy host</p>
 <img width="1920" height="898" alt="image" src="https://github.com/user-attachments/assets/f286f739-5d31-4260-9fb1-65b8ba68c467" />
+
+<p>Giao diện dashboard chính </p>
+<img width="1914" height="894" alt="image" src="https://github.com/user-attachments/assets/5e997281-81af-4f55-bab3-e5f0af668b69" />
+
+<p>Tạo rule quản lý RAM</p>
+<img width="1920" height="870" alt="image" src="https://github.com/user-attachments/assets/06793fb0-1c43-4351-98ab-a68abd4c466a" />
